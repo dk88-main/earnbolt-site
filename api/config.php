@@ -1,13 +1,16 @@
 <?php
-// Firebase Configuration - UPDATE THESE VALUES
+// Firebase Configuration - Use environment variables for security
 
 // Get these from Firebase Console > Project Settings > General
-define('FIREBASE_URL', 'https://your-project-id-default-rtdb.firebaseio.com');
-define('FIREBASE_PROJECT_ID', 'your-project-id');
+if (!isset($_ENV['FIREBASE_URL']) || !isset($_ENV['FIREBASE_PROJECT_ID'])) {
+    throw new Exception('Required Firebase environment variables not set');
+}
+define('FIREBASE_URL', $_ENV['FIREBASE_URL']);
+define('FIREBASE_PROJECT_ID', $_ENV['FIREBASE_PROJECT_ID']);
 
 // Get from Firebase Console > Project Settings > Service Accounts > Database Secrets
-define('FIREBASE_SECRET', 'your-database-secret-key');
+define('FIREBASE_SECRET', $_ENV['FIREBASE_SECRET'] ?? '');
 
 // Get from Firebase Console > Project Settings > General > Web API Key
-define('FIREBASE_API_KEY', 'your-web-api-key');
+define('FIREBASE_API_KEY', $_ENV['FIREBASE_API_KEY'] ?? '');
 ?>
