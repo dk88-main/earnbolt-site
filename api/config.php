@@ -1,14 +1,13 @@
 <?php
-// Firebase Configuration
-// Replace these with your actual Firebase project details
+// Firebase Configuration - UPDATE THESE VALUES
 
-define('FIREBASE_URL', 'https://your-project-id.firebaseio.com');
-define('FIREBASE_SECRET', 'your-firebase-secret-key');
-
-// Alternative: Use Firebase REST API with Web API Key
-define('FIREBASE_API_KEY', 'your-web-api-key');
+// Get these from Firebase Console > Project Settings > General
+define('FIREBASE_URL', 'https://your-project-id-default-rtdb.firebaseio.com');
 define('FIREBASE_PROJECT_ID', 'your-project-id');
 
-// Firestore REST API endpoint
-define('FIRESTORE_URL', 'https://firestore.googleapis.com/v1/projects/' . FIREBASE_PROJECT_ID . '/databases/(default)/documents');
+// Get from Firebase Console > Project Settings > Service Accounts > Database Secrets
+define('FIREBASE_SECRET', 'your-database-secret-key');
+
+// Get from Firebase Console > Project Settings > General > Web API Key
+define('FIREBASE_API_KEY', 'your-web-api-key');
 ?>

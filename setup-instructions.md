@@ -1,42 +1,51 @@
-# EarnBolt Referral System Setup
+# EarnBolt Real Referral System Setup
 
 ## 1. Firebase Configuration
 
-Edit `/api/config.php` and replace with your Firebase project details:
+Edit `/api/config.php` with your Firebase project details:
 
 ```php
-define('FIREBASE_API_KEY', 'your-actual-web-api-key');
-define('FIREBASE_PROJECT_ID', 'your-actual-project-id');
+define('FIREBASE_URL', 'https://your-project-id-default-rtdb.firebaseio.com');
+define('FIREBASE_PROJECT_ID', 'your-project-id');
+define('FIREBASE_SECRET', 'your-database-secret-key');
+define('FIREBASE_API_KEY', 'your-web-api-key');
 ```
 
 ## 2. Get Firebase Credentials
 
-1. Go to Firebase Console → Project Settings
-2. Copy **Web API Key** 
-3. Copy **Project ID**
-4. Update `config.php` with these values
+1. **Firebase Console → Project Settings → General**
+   - Copy **Project ID**
+   - Copy **Web API Key**
 
-## 3. Test the System
+2. **Firebase Console → Project Settings → Service Accounts → Database Secrets**
+   - Copy **Database Secret** (for Realtime Database)
 
-1. Upload all files to `earnbolt.in`
-2. Test URL: `earnbolt.in/invite/REALCODE` (use actual referral code from your app)
-3. Should show referrer's name from Firebase database
+3. **Update config.php** with these values
 
-## 4. How It Works
+## 3. Deploy Cloud Function
 
-- `earnbolt.in/invite/ABC123` → Shows referral page
-- JavaScript stores referral code in localStorage
-- When user downloads app and signs up, code is automatically applied
-- Both users get rewards when first withdrawal is completed
-
-## Files Structure
+```bash
+cd firebase/functions
+npm install axios
+firebase deploy --only functions
 ```
-website/
-├── api/
-│   ├── config.php (Firebase credentials)
-│   └── referrer.php (API endpoint)
-├── invite/
-│   └── index.html (Referral landing page)
-├── .htaccess (URL routing)
-└── js/script.js (Referral detection)
-```
+
+## 4. How Real System Works
+
+1. **User Signs Up** → Cloud Function auto-creates `earnbolt.in/invite/ABC123.html`
+2. **User Shares** → `earnbolt.in/invite/ABC123` 
+3. **Friend Visits** → API queries Firebase for real user data
+4. **Shows Real Name** → From Firebase database
+5. **Auto-Links** → When friend signs up in app
+
+## 5. Manual Create Referral Page
+
+`earnbolt.in/api/create-referral.php?code=ABC123&name=John`
+
+## 6. Test Real System
+
+1. Create user in Firebase with referralCode
+2. Visit `earnbolt.in/invite/REALCODE`
+3. Should show real user's name from database
+
+**System now connects to real Firebase! 🚀**
