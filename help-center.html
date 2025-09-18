@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Center - EarnBolt</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .help-content {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        .search-box {
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 215, 0, 0.3);
+            border-radius: 50px;
+            padding: 1rem 2rem;
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto 3rem;
+            color: white;
+            font-size: 1.1rem;
+            text-align: center;
+        }
+        .help-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        .help-category {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(76, 175, 80, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 20px;
+            padding: 2rem;
+            transition: transform 0.3s ease;
+        }
+        .help-category:hover {
+            transform: translateY(-5px);
+        }
+        .category-icon {
+            font-size: 3rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        .category-title {
+            color: #FFD700;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .faq-section {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+        }
+        .faq-item {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 1.5rem 0;
+        }
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+        .faq-question {
+            color: #FFD700;
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .faq-answer {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+            margin-top: 1rem;
+        }
+        .faq-toggle {
+            transition: transform 0.3s ease;
+        }
+        .faq-item.active .faq-toggle {
+            transform: rotate(180deg);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        .contact-method {
+            background: linear-gradient(45deg, rgba(255, 215, 0, 0.1), rgba(76, 175, 80, 0.1));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 15px;
+            padding: 2rem;
+            text-align: center;
+        }
+        .contact-icon {
+            font-size: 2.5rem;
+            color: #FFD700;
+            margin-bottom: 1rem;
+        }
+        .contact-title {
+            color: #FFD700;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+        }
+        .contact-info {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.6;
+        }
+        .status-indicator {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            background: #4CAF50;
+            margin-right: 0.5rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bolt"></i>
+                <span>EarnBolt</span>
+            </div>
+            <div class="nav-menu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="index.html#features" class="nav-link">Features</a>
+                <a href="index.html#how-it-works" class="nav-link">How It Works</a>
+                <a href="contact-us.html" class="nav-link">Contact</a>
+                <a href="index.html#download" class="nav-link">Download</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Help Center Content -->
+    <section style="padding: 8rem 0 4rem; background: linear-gradient(135deg, #0F1419 0%, #1B263B 50%, #415A77 100%); min-height: 100vh;">
+        <div class="container">
+            <h1 class="section-title">Help Center</h1>
+            <p style="text-align: center; color: rgba(255, 255, 255, 0.7); margin-bottom: 3rem;">
+                Find answers to your questions and get the help you need
+            </p>
+
+            <div class="help-content">
+                <!-- Search Box -->
+                <input type="text" class="search-box" placeholder="Search for help topics..." id="searchBox">
+
+                <!-- Help Categories -->
+                <div class="help-categories">
+                    <div class="help-category">
+                        <div class="category-icon">
+                            <i class="fas fa-coins"></i>
+                        </div>
+                        <h3 class="category-title">Earning Money</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Learn how to maximize your earnings through ads, tasks, referrals, and daily check-ins.</p>
+                    </div>
+                    <div class="help-category">
+                        <div class="category-icon">
+                            <i class="fas fa-credit-card"></i>
+                        </div>
+                        <h3 class="category-title">Withdrawals</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Everything about withdrawing your earnings, payment methods, and processing times.</p>
+                    </div>
+                    <div class="help-category">
+                        <div class="category-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h3 class="category-title">Referrals</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">How to invite friends, track referrals, and earn bonus rewards.</p>
+                    </div>
+                    <div class="help-category">
+                        <div class="category-icon">
+                            <i class="fas fa-user-cog"></i>
+                        </div>
+                        <h3 class="category-title">Account</h3>
+                        <p style="color: rgba(255, 255, 255, 0.8);">Manage your profile, security settings, and account preferences.</p>
+                    </div>
+                </div>
+
+                <!-- FAQ Section -->
+                <div class="faq-section">
+                    <h2 style="color: #FFD700; text-align: center; margin-bottom: 2rem;">Frequently Asked Questions</h2>
+                    
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How do I start earning money on EarnBolt?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Getting started is easy! Download the app, sign up with Google, and you can immediately start earning by:
+                            <ul style="margin-top: 1rem;">
+                                <li>Watching video ads (earn 1-5 coins per ad)</li>
+                                <li>Completing daily tasks (earn 10-50 coins)</li>
+                                <li>Daily check-ins (earn streak bonuses)</li>
+                                <li>Referring friends (earn 100 coins per referral)</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            What is the minimum withdrawal amount?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            The minimum withdrawal amount is ₹10 (1000 coins). This low threshold ensures you can cash out your earnings quickly. Higher amounts like ₹50, ₹100, and ₹500 are also available for withdrawal.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How long does it take to process withdrawals?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Withdrawal processing times:
+                            <ul style="margin-top: 1rem;">
+                                <li><strong>UPI/Bank Transfer:</strong> 1-3 business days</li>
+                                <li><strong>PayPal:</strong> 3-5 business days</li>
+                                <li><strong>Gift Cards:</strong> 24-48 hours</li>
+                            </ul>
+                            You'll receive notifications about your withdrawal status updates.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How does the referral system work?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Earn money by inviting friends:
+                            <ul style="margin-top: 1rem;">
+                                <li><strong>Immediate Bonus:</strong> 100 coins when someone signs up with your code</li>
+                                <li><strong>Activity Bonus:</strong> 10% of their earnings for their first month</li>
+                                <li><strong>Milestone Rewards:</strong> Extra bonuses when they reach certain earning levels</li>
+                            </ul>
+                            Share your unique referral code found in the "Refer & Earn" section.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Why are my ads not loading?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            If ads aren't loading, try these solutions:
+                            <ul style="margin-top: 1rem;">
+                                <li>Check your internet connection</li>
+                                <li>Close and restart the app</li>
+                                <li>Clear app cache in device settings</li>
+                                <li>Wait a few minutes - ad availability varies by region</li>
+                                <li>Update to the latest app version</li>
+                            </ul>
+                            If issues persist, contact our support team.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            How do I increase my earning level?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Your level increases based on total coins earned:
+                            <ul style="margin-top: 1rem;">
+                                <li><strong>Level 1:</strong> 0-999 coins</li>
+                                <li><strong>Level 2:</strong> 1,000-4,999 coins</li>
+                                <li><strong>Level 3:</strong> 5,000-9,999 coins</li>
+                                <li><strong>Level 4:</strong> 10,000+ coins</li>
+                            </ul>
+                            Higher levels unlock better rewards and exclusive features!
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Is EarnBolt safe and legitimate?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Yes! EarnBolt is completely safe and legitimate:
+                            <ul style="margin-top: 1rem;">
+                                <li>Secure Google authentication</li>
+                                <li>Encrypted data storage with Firebase</li>
+                                <li>Thousands of successful withdrawals processed</li>
+                                <li>Transparent privacy policy and terms</li>
+                                <li>Regular security audits and updates</li>
+                            </ul>
+                            We never ask for sensitive information like passwords or bank PINs.
+                        </div>
+                    </div>
+
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            Can I use EarnBolt on multiple devices?
+                            <i class="fas fa-chevron-down faq-toggle"></i>
+                        </div>
+                        <div class="faq-answer" style="display: none;">
+                            Yes, you can use the same account on multiple devices by signing in with the same Google account. Your progress, coins, and settings will sync automatically across all devices.
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Contact Methods -->
+                <div class="contact-grid">
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-comments"></i>
+                        </div>
+                        <h3 class="contact-title">Live Chat</h3>
+                        <div class="contact-info">
+                            <div><span class="status-indicator"></span>Available 24/7</div>
+                            <p>Get instant help through in-app chat support</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <h3 class="contact-title">Email Support</h3>
+                        <div class="contact-info">
+                            <div>support@earnbolt.in</div>
+                            <p>Response within 24 hours</p>
+                        </div>
+                    </div>
+                    <div class="contact-method">
+                        <div class="contact-icon">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="contact-title">User Guide</h3>
+                        <div class="contact-info">
+                            <div>Complete tutorials</div>
+                            <p>Step-by-step guides available in-app</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bolt"></i>
+                        <span>EarnBolt</span>
+                    </div>
+                    <p>Turn your time into money with the easiest earning app.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="help-center.html">Help Center</a></li>
+                        <li><a href="contact-us.html">Contact Us</a></li>
+                        <li><a href="privacy-policy.html">Privacy Policy</a></li>
+                        <li><a href="terms-of-service.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="mailto:support@earnbolt.com">support@earnbolt.com</a></li>
+                        <li><a href="help-center.html">FAQ</a></li>
+                        <li><a href="contact-us.html">Contact Form</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 EarnBolt. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFAQ(element) {
+            const faqItem = element.parentElement;
+            const answer = faqItem.querySelector('.faq-answer');
+            const isActive = faqItem.classList.contains('active');
+            
+            // Close all other FAQ items
+            document.querySelectorAll('.faq-item').forEach(item => {
+                item.classList.remove('active');
+                item.querySelector('.faq-answer').style.display = 'none';
+            });
+            
+            // Toggle current item
+            if (!isActive) {
+                faqItem.classList.add('active');
+                answer.style.display = 'block';
+            }
+        }
+
+        // Search functionality
+        document.getElementById('searchBox').addEventListener('input', function(e) {
+            const searchTerm = e.target.value.toLowerCase();
+            const faqItems = document.querySelectorAll('.faq-item');
+            
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question').textContent.toLowerCase();
+                const answer = item.querySelector('.faq-answer').textContent.toLowerCase();
+                
+                if (question.includes(searchTerm) || answer.includes(searchTerm)) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = searchTerm ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
