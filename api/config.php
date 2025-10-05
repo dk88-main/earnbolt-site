@@ -1,16 +1,14 @@
 <?php
-// Firebase Configuration - Use environment variables for security
+// Firebase Configuration
+// Replace these with your actual Firebase project details
 
-// Get these from Firebase Console > Project Settings > General
-if (!isset($_ENV['FIREBASE_URL']) || !isset($_ENV['FIREBASE_PROJECT_ID'])) {
-    throw new Exception('Required Firebase environment variables not set');
-}
-define('FIREBASE_URL', $_ENV['FIREBASE_URL']);
-define('FIREBASE_PROJECT_ID', $_ENV['FIREBASE_PROJECT_ID']);
+define('FIREBASE_URL', 'https://your-project-id.firebaseio.com');
+define('FIREBASE_SECRET', 'your-firebase-secret-key');
 
-// Get from Firebase Console > Project Settings > Service Accounts > Database Secrets
-define('FIREBASE_SECRET', $_ENV['FIREBASE_SECRET'] ?? '');
+// Alternative: Use Firebase REST API with Web API Key
+define('FIREBASE_API_KEY', 'your-web-api-key');
+define('FIREBASE_PROJECT_ID', 'your-project-id');
 
-// Get from Firebase Console > Project Settings > General > Web API Key
-define('FIREBASE_API_KEY', $_ENV['FIREBASE_API_KEY'] ?? '');
+// Firestore REST API endpoint
+define('FIRESTORE_URL', 'https://firestore.googleapis.com/v1/projects/' . FIREBASE_PROJECT_ID . '/databases/(default)/documents');
 ?>

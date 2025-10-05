@@ -31,9 +31,9 @@ const referralsValue = document.getElementById('referrals-value');
 const monthlyEarning = document.getElementById('monthly-earning');
 
 function updateCalculator() {
-    const ads = parseInt(adsSlider.value) || 0;
-    const tasks = parseInt(tasksSlider.value) || 0;
-    const referrals = parseInt(referralsSlider.value) || 0;
+    const ads = parseInt(adsSlider.value);
+    const tasks = parseInt(tasksSlider.value);
+    const referrals = parseInt(referralsSlider.value);
     
     adsValue.textContent = ads;
     tasksValue.textContent = tasks;
