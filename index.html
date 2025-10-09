@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EarnBolt - Earn Money Online | India's #1 Earning App</title>
+    <title>EarnBolt - Turn Your Time Into Money</title>
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
     <!-- Navigation -->
@@ -16,13 +15,14 @@
                 <i class="fas fa-bolt"></i>
                 <span>EarnBolt</span>
             </div>
-            <ul class="nav-menu">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#features">Features</a></li>
-                <li><a href="#how-it-works">How It Works</a></li>
-                <li><a href="#testimonials">Reviews</a></li>
-                <li><a href="#download" class="nav-cta">Download App</a></li>
-            </ul>
+            <div class="nav-menu">
+                <a href="#home" class="nav-link">Home</a>
+                <a href="#features" class="nav-link">Features</a>
+                <a href="#how-it-works" class="nav-link">How It Works</a>
+                <a href="help-center.html" class="nav-link">Help Center</a>
+                <a href="contact-us.html" class="nav-link">Contact</a>
+                <a href="#download" class="nav-link">Download</a>
+            </div>
             <div class="hamburger">
                 <span></span>
                 <span></span>
@@ -33,81 +33,44 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero">
-        <div class="hero-bg">
-            <div class="hero-shape shape-1"></div>
-            <div class="hero-shape shape-2"></div>
-            <div class="hero-shape shape-3"></div>
-        </div>
-        <div class="container">
+        <div class="hero-container">
             <div class="hero-content">
-                <div class="hero-left">
-                    <div class="hero-badge">
-                        <span>🔥 50,000+ Users Earning Daily</span>
+                <h1 class="hero-title">Turn Your Time Into <span class="gradient-text">Money</span></h1>
+                <p class="hero-subtitle">Earn real cash by watching ads, completing tasks, and referring friends. Start making money today with EarnBolt!</p>
+                <div class="hero-stats">
+                    <div class="stat">
+                        <span class="stat-number">50K+</span>
+                        <span class="stat-label">Active Users</span>
                     </div>
-                    <h1 class="hero-title">
-                        Earn <span class="highlight">₹15,000+</span> Monthly<br>
-                        From Your <span class="highlight">Phone</span>
-                    </h1>
-                    <p class="hero-description">
-                        Watch ads, complete tasks, refer friends and earn real money. 
-                        No investment needed. Instant withdrawals to your bank account.
-                    </p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-number">₹10L+</div>
-                            <div class="stat-label">Total Paid</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">50K+</div>
-                            <div class="stat-label">Active Users</div>
-                        </div>
-                        <div class="stat-item">
-                            <div class="stat-number">4.8★</div>
-                            <div class="stat-label">App Rating</div>
-                        </div>
+                    <div class="stat">
+                        <span class="stat-number">₹10L+</span>
+                        <span class="stat-label">Paid Out</span>
                     </div>
-                    <div class="hero-buttons">
-                        <a href="#download" class="btn-primary">
-                            <i class="fas fa-download"></i>
-                            Start Earning Now
-                        </a>
-                        <a href="#how-it-works" class="btn-secondary">
-                            <i class="fas fa-play"></i>
-                            Watch Demo
-                        </a>
+                    <div class="stat">
+                        <span class="stat-number">4.8★</span>
+                        <span class="stat-label">App Rating</span>
                     </div>
                 </div>
-                <div class="hero-right">
-                    <div class="phone-container">
-                        <div class="phone">
-                            <div class="phone-screen">
-                                <div class="app-header">
-                                    <div class="balance">₹2,450</div>
-                                    <div class="notification">+₹50 earned!</div>
-                                </div>
-                                <div class="earning-card">
-                                    <h3>Today's Progress</h3>
-                                    <div class="progress-bar">
-                                        <div class="progress-fill"></div>
-                                    </div>
-                                    <div class="progress-text">8/10 ads watched</div>
-                                </div>
-                                <div class="action-buttons">
-                                    <div class="action-btn">
-                                        <i class="fas fa-video"></i>
-                                        Watch Ads
-                                    </div>
-                                    <div class="action-btn">
-                                        <i class="fas fa-tasks"></i>
-                                        Daily Tasks
-                                    </div>
-                                </div>
+                <div class="hero-buttons">
+                    <a href="#download" class="btn btn-primary">
+                        <i class="fas fa-download"></i>
+                        Download Now
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <i class="fas fa-play"></i>
+                        How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <div class="phone-mockup">
+                    <div class="phone-screen">
+                        <div class="app-preview">
+                            <div class="coins-animation">
+                                <i class="fas fa-coins"></i>
+                                <i class="fas fa-coins"></i>
+                                <i class="fas fa-coins"></i>
                             </div>
-                        </div>
-                        <div class="floating-coins">
-                            <div class="coin">₹</div>
-                            <div class="coin">₹</div>
-                            <div class="coin">₹</div>
                         </div>
                     </div>
                 </div>
@@ -118,76 +81,64 @@
     <!-- Features Section -->
     <section id="features" class="features">
         <div class="container">
-            <div class="section-header">
-                <h2>Multiple Ways to Earn Money</h2>
-                <p>Choose from various earning methods that suit your lifestyle</p>
-            </div>
+            <h2 class="section-title">Why Choose EarnBolt?</h2>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-video"></i>
                     </div>
-                    <h3>Watch Video Ads</h3>
-                    <p>Watch short 30-second ads and earn ₹8-15 per ad. Up to 50 ads daily!</p>
-                    <div class="earning-amount">₹400-750/day</div>
+                    <h3>Watch & Earn</h3>
+                    <p>Watch short video ads and earn coins instantly. Simple and rewarding!</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-tasks"></i>
                     </div>
-                    <h3>Complete Tasks</h3>
-                    <p>Simple tasks like app downloads, surveys, and social media follows.</p>
-                    <div class="earning-amount">₹50-200/task</div>
+                    <h3>Daily Tasks</h3>
+                    <p>Complete daily tasks and challenges to maximize your earnings.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <h3>Refer Friends</h3>
-                    <p>Invite friends and earn ₹100 when they make their first withdrawal.</p>
-                    <div class="earning-amount">₹100/friend</div>
+                    <p>Invite friends and earn bonus coins when they complete their first withdrawal.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
-                        <i class="fas fa-calendar-check"></i>
+                        <i class="fas fa-fire"></i>
                     </div>
-                    <h3>Daily Check-in</h3>
-                    <p>Login daily to claim bonus rewards. 7-day streak gives ₹500!</p>
-                    <div class="earning-amount">₹25-500/day</div>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3>Leaderboard Prizes</h3>
-                    <p>Compete with others and win weekly cash prizes up to ₹5,000!</p>
-                    <div class="earning-amount">₹500-5000</div>
+                    <h3>Daily Streaks</h3>
+                    <p>Maintain daily check-in streaks for bigger rewards and bonuses.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">
                         <i class="fas fa-mobile-alt"></i>
                     </div>
-                    <h3>Instant Withdrawal</h3>
-                    <p>Withdraw to UPI, Paytm, or bank account. Minimum withdrawal ₹50.</p>
-                    <div class="earning-amount">Min ₹50</div>
+                    <h3>Easy Withdrawals</h3>
+                    <p>Withdraw your earnings via UPI, Paytm, Bank transfer, or gift cards.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>100% Safe</h3>
+                    <p>Secure platform with guaranteed payments and data protection.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
+    <!-- How It Works Section -->
     <section id="how-it-works" class="how-it-works">
         <div class="container">
-            <div class="section-header">
-                <h2>How to Start Earning in 3 Simple Steps</h2>
-                <p>Get started in less than 2 minutes</p>
-            </div>
-            <div class="steps-container">
+            <h2 class="section-title">How It Works</h2>
+            <div class="steps">
                 <div class="step">
                     <div class="step-number">1</div>
                     <div class="step-content">
-                        <h3>Download & Register</h3>
-                        <p>Download the EarnBolt app and create your account with Google or phone number.</p>
+                        <h3>Download & Sign Up</h3>
+                        <p>Download EarnBolt app and create your account with Google sign-in.</p>
                     </div>
                 </div>
                 <div class="step">
@@ -201,7 +152,7 @@
                     <div class="step-number">3</div>
                     <div class="step-content">
                         <h3>Withdraw Money</h3>
-                        <p>Convert coins to cash and withdraw instantly to your UPI or bank account.</p>
+                        <p>Convert your coins to real money and withdraw via your preferred method.</p>
                     </div>
                 </div>
             </div>
@@ -211,103 +162,29 @@
     <!-- Earnings Calculator -->
     <section class="calculator">
         <div class="container">
-            <div class="calculator-content">
-                <div class="calculator-left">
-                    <h2>Calculate Your Monthly Earnings</h2>
-                    <p>Adjust the sliders to see your earning potential</p>
-                    <div class="calculator-controls">
-                        <div class="control-group">
-                            <label>Daily Ads Watched</label>
-                            <div class="slider-container">
-                                <input type="range" id="ads-slider" min="5" max="50" value="20">
-                                <span class="slider-value" id="ads-value">20</span>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label>Daily Tasks Completed</label>
-                            <div class="slider-container">
-                                <input type="range" id="tasks-slider" min="0" max="5" value="2">
-                                <span class="slider-value" id="tasks-value">2</span>
-                            </div>
-                        </div>
-                        <div class="control-group">
-                            <label>Friends Referred (Monthly)</label>
-                            <div class="slider-container">
-                                <input type="range" id="referrals-slider" min="0" max="20" value="3">
-                                <span class="slider-value" id="referrals-value">3</span>
-                            </div>
-                        </div>
+            <h2 class="section-title">Earnings Calculator</h2>
+            <div class="calc-container">
+                <div class="calc-inputs">
+                    <div class="input-group">
+                        <label>Ads per day</label>
+                        <input type="range" id="ads" min="1" max="50" value="10">
+                        <span id="ads-value">10</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Daily tasks</label>
+                        <input type="range" id="tasks" min="0" max="4" value="2">
+                        <span id="tasks-value">2</span>
+                    </div>
+                    <div class="input-group">
+                        <label>Referrals per month</label>
+                        <input type="range" id="referrals" min="0" max="10" value="1">
+                        <span id="referrals-value">1</span>
                     </div>
                 </div>
-                <div class="calculator-right">
-                    <div class="earnings-card">
-                        <h3>Your Monthly Earnings</h3>
-                        <div class="total-earning">
-                            <span class="currency">₹</span>
-                            <span class="amount" id="total-amount">8,500</span>
-                        </div>
-                        <div class="earnings-breakdown">
-                            <div class="breakdown-item">
-                                <span>Ads Revenue:</span>
-                                <span id="ads-earning">₹6,000</span>
-                            </div>
-                            <div class="breakdown-item">
-                                <span>Tasks Revenue:</span>
-                                <span id="tasks-earning">₹2,200</span>
-                            </div>
-                            <div class="breakdown-item">
-                                <span>Referral Bonus:</span>
-                                <span id="referrals-earning">₹300</span>
-                            </div>
-                        </div>
-                        <div class="earning-note">
-                            💡 Top users earn ₹15,000+ monthly!
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section id="testimonials" class="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <h2>What Our Users Say</h2>
-                <p>Real reviews from real earners</p>
-            </div>
-            <div class="testimonials-grid">
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"I earn ₹8,000+ every month just by watching ads during my free time. Best earning app ever!"</p>
-                    <div class="user-info">
-                        <div class="user-avatar">R</div>
-                        <div class="user-details">
-                            <h4>Rahul Kumar</h4>
-                            <span>Earns ₹8,500/month</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Referred 15 friends and earned ₹1,500 bonus. Payments are always on time and genuine!"</p>
-                    <div class="user-info">
-                        <div class="user-avatar">P</div>
-                        <div class="user-details">
-                            <h4>Priya Sharma</h4>
-                            <span>Earns ₹12,000/month</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="stars">★★★★★</div>
-                    <p>"Started 3 months ago, now earning ₹15,000 monthly. This app changed my financial situation!"</p>
-                    <div class="user-info">
-                        <div class="user-avatar">A</div>
-                        <div class="user-details">
-                            <h4>Amit Singh</h4>
-                            <span>Earns ₹15,000/month</span>
-                        </div>
+                <div class="calc-result">
+                    <div class="earning-display">
+                        <span class="earning-amount">₹<span id="monthly-earning">450</span></span>
+                        <span class="earning-label">Monthly Earnings</span>
                     </div>
                 </div>
             </div>
@@ -317,34 +194,23 @@
     <!-- Download Section -->
     <section id="download" class="download">
         <div class="container">
-            <div class="download-content">
-                <h2>Ready to Start Earning?</h2>
-                <p>Join 50,000+ users who are already making money daily</p>
-                <div class="download-buttons">
-                    <a href="#" class="download-btn">
-                        <i class="fab fa-google-play"></i>
-                        <div class="btn-text">
-                            <span>Get it on</span>
-                            <strong>Google Play</strong>
-                        </div>
-                    </a>
-                    <a href="#" class="download-btn">
-                        <i class="fab fa-apple"></i>
-                        <div class="btn-text">
-                            <span>Download on</span>
-                            <strong>App Store</strong>
-                        </div>
-                    </a>
-                </div>
-                <div class="download-features">
-                    <div class="feature">✅ Free to join</div>
-                    <div class="feature">✅ No investment required</div>
-                    <div class="feature">✅ Instant payments</div>
-                    <div class="feature">✅ 24/7 support</div>
-                </div>
-                <div class="bonus-offer">
-                    🎁 <strong>Welcome Bonus:</strong> Get ₹50 on signup + ₹100 on first withdrawal!
-                </div>
+            <h2 class="section-title">Start Earning Today</h2>
+            <p class="download-subtitle">Join thousands of users already earning with EarnBolt</p>
+            <div class="download-buttons">
+                <a href="#" class="download-btn">
+                    <i class="fab fa-google-play"></i>
+                    <div>
+                        <span>Get it on</span>
+                        <strong>Google Play</strong>
+                    </div>
+                </a>
+                <a href="#" class="download-btn">
+                    <i class="fab fa-apple"></i>
+                    <div>
+                        <span>Download on the</span>
+                        <strong>App Store</strong>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -358,16 +224,10 @@
                         <i class="fas fa-bolt"></i>
                         <span>EarnBolt</span>
                     </div>
-                    <p>India's most trusted earning platform with guaranteed payments and 24/7 customer support.</p>
-                    <div class="social-links">
-                        <a href="#"><i class="fab fa-facebook"></i></a>
-                        <a href="#"><i class="fab fa-twitter"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-youtube"></i></a>
-                    </div>
+                    <p>Turn your time into money with the most rewarding earning app.</p>
                 </div>
                 <div class="footer-section">
-                    <h3>Quick Links</h3>
+                    <h4>Quick Links</h4>
                     <ul>
                         <li><a href="#home">Home</a></li>
                         <li><a href="#features">Features</a></li>
@@ -376,7 +236,7 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Support</h3>
+                    <h4>Support</h4>
                     <ul>
                         <li><a href="help-center.html">Help Center</a></li>
                         <li><a href="contact-us.html">Contact Us</a></li>
@@ -385,16 +245,17 @@
                     </ul>
                 </div>
                 <div class="footer-section">
-                    <h3>Contact Info</h3>
-                    <ul>
-                        <li><i class="fas fa-envelope"></i> support@earnbolt.com</li>
-                        <li><i class="fas fa-phone"></i> +91 9876543210</li>
-                        <li><i class="fas fa-map-marker-alt"></i> Mumbai, India</li>
-                    </ul>
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 EarnBolt. All rights reserved. Made with ❤️ in India</p>
+                <p>&copy; 2024 EarnBolt. All rights reserved.</p>
             </div>
         </div>
     </footer>
