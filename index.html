@@ -3,25 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>EarnBolt - Turn Your Time Into Money</title>
+    <title>🎮 EarnBolt - Gamified Earning App | Turn Time Into Money</title>
+    <meta name="description" content="India's most rewarding gamified earning app. Watch ads, complete quests, climb leaderboards & earn real money!">
     <link rel="stylesheet" href="css/style.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+    <!-- Floating Coins Background -->
+    <div class="floating-coins">
+        <i class="fas fa-coins coin"></i>
+        <i class="fas fa-coins coin"></i>
+        <i class="fas fa-coins coin"></i>
+        <i class="fas fa-coins coin"></i>
+        <i class="fas fa-coins coin"></i>
+    </div>
+
     <!-- Navigation -->
     <nav class="navbar">
         <div class="nav-container">
             <div class="nav-logo">
-                <i class="fas fa-bolt"></i>
+                <div class="logo-icon">
+                    <i class="fas fa-bolt"></i>
+                    <div class="energy-ring"></div>
+                </div>
                 <span>EarnBolt</span>
+                <div class="level-badge">LVL 99</div>
             </div>
             <div class="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#features" class="nav-link">Features</a>
-                <a href="#how-it-works" class="nav-link">How It Works</a>
-                <a href="help-center.html" class="nav-link">Help Center</a>
-                <a href="contact-us.html" class="nav-link">Contact</a>
-                <a href="#download" class="nav-link">Download</a>
+                <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="#quests" class="nav-link"><i class="fas fa-tasks"></i> Quests</a>
+                <a href="#leaderboard" class="nav-link"><i class="fas fa-trophy"></i> Leaderboard</a>
+                <a href="#rewards" class="nav-link"><i class="fas fa-gift"></i> Rewards</a>
+                <a href="#download" class="nav-link game-btn"><i class="fas fa-download"></i> Play Now</a>
             </div>
             <div class="hamburger">
                 <span></span>
@@ -35,42 +49,299 @@
     <section id="home" class="hero">
         <div class="hero-container">
             <div class="hero-content">
-                <h1 class="hero-title">Turn Your Time Into <span class="gradient-text">Money</span></h1>
-                <p class="hero-subtitle">Earn real cash by watching ads, completing tasks, and referring friends. Start making money today with EarnBolt!</p>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">50K+</span>
-                        <span class="stat-label">Active Users</span>
+                <div class="player-hud">
+                    <div class="xp-bar">
+                        <span class="xp-label">XP</span>
+                        <div class="xp-progress">
+                            <div class="xp-fill" data-xp="75"></div>
+                        </div>
+                        <span class="xp-text">2,450 / 3,000</span>
                     </div>
-                    <div class="stat">
-                        <span class="stat-number">₹10L+</span>
-                        <span class="stat-label">Paid Out</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">4.8★</span>
-                        <span class="stat-label">App Rating</span>
+                    <div class="coin-counter">
+                        <i class="fas fa-coins"></i>
+                        <span class="coin-count" data-count="12450">0</span>
                     </div>
                 </div>
+                
+                <h1 class="hero-title">🎮 Level Up Your <span class="gradient-text">Earnings</span></h1>
+                <p class="hero-subtitle">India's most rewarding gamified earning app! Complete quests, climb leaderboards, unlock achievements & earn real money!</p>
+                
+                <div class="live-stats">
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-users"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-count="50000">0</span>
+                            <span class="stat-label">Players Online</span>
+                        </div>
+                        <div class="stat-pulse"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-rupee-sign"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number" data-count="1000000">0</span>
+                            <span class="stat-label">Total Rewards</span>
+                        </div>
+                        <div class="stat-pulse"></div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-icon"><i class="fas fa-star"></i></div>
+                        <div class="stat-info">
+                            <span class="stat-number">4.8</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="stat-pulse"></div>
+                    </div>
+                </div>
+                
                 <div class="hero-buttons">
-                    <a href="#download" class="btn btn-primary">
-                        <i class="fas fa-download"></i>
-                        Download Now
+                    <a href="#download" class="game-btn primary pulse">
+                        <i class="fas fa-rocket"></i>
+                        <span>Start Earning</span>
+                        <div class="btn-glow"></div>
                     </a>
-                    <a href="#how-it-works" class="btn btn-secondary">
+                    <a href="#quests" class="game-btn secondary">
                         <i class="fas fa-play"></i>
-                        How It Works
+                        <span>View Quests</span>
                     </a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="phone-mockup">
+            
+            <div class="hero-game">
+                <div class="game-phone">
                     <div class="phone-screen">
-                        <div class="app-preview">
-                            <div class="coins-animation">
-                                <i class="fas fa-coins"></i>
-                                <i class="fas fa-coins"></i>
-                                <i class="fas fa-coins"></i>
+                        <div class="game-ui">
+                            <div class="ui-header">
+                                <div class="coin-display">
+                                    <i class="fas fa-coins"></i>
+                                    <span class="animated-counter" data-count="2450">0</span>
+                                </div>
+                                <div class="streak-display">
+                                    <i class="fas fa-fire"></i>
+                                    <span>7 Day Streak</span>
+                                </div>
                             </div>
+                            <div class="quest-preview">
+                                <div class="quest-item active">
+                                    <i class="fas fa-video"></i>
+                                    <span>Watch 5 Ads</span>
+                                    <div class="progress-mini">
+                                        <div class="progress-fill" style="width: 60%"></div>
+                                    </div>
+                                </div>
+                                <div class="floating-rewards">
+                                    <div class="reward-popup">+50 <i class="fas fa-coins"></i></div>
+                                    <div class="reward-popup">+25 XP</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="achievement-popup">
+                    <i class="fas fa-trophy"></i>
+                    <span>Achievement Unlocked!</span>
+                    <div class="achievement-name">First Steps</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quests Section -->
+    <section id="quests" class="quests">
+        <div class="container">
+            <h2 class="section-title">🎯 Daily Quests & Challenges</h2>
+            <div class="quest-board">
+                <div class="quest-card legendary">
+                    <div class="quest-rarity">LEGENDARY</div>
+                    <div class="quest-icon">
+                        <i class="fas fa-video"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Ad Master</h3>
+                    <p>Watch 20 video ads today</p>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="65"></div>
+                        </div>
+                        <span class="progress-text">13/20</span>
+                    </div>
+                    <div class="quest-reward">
+                        <i class="fas fa-coins"></i> 500 + <i class="fas fa-star"></i> 100 XP
+                    </div>
+                </div>
+                
+                <div class="quest-card epic">
+                    <div class="quest-rarity">EPIC</div>
+                    <div class="quest-icon">
+                        <i class="fas fa-fire"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Streak Warrior</h3>
+                    <p>Maintain 7-day login streak</p>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="85"></div>
+                        </div>
+                        <span class="progress-text">6/7</span>
+                    </div>
+                    <div class="quest-reward">
+                        <i class="fas fa-coins"></i> 1000 + <i class="fas fa-trophy"></i> Badge
+                    </div>
+                </div>
+                
+                <div class="quest-card rare">
+                    <div class="quest-rarity">RARE</div>
+                    <div class="quest-icon">
+                        <i class="fas fa-users"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Referral Champion</h3>
+                    <p>Invite 3 friends this week</p>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill" data-progress="33"></div>
+                        </div>
+                        <span class="progress-text">1/3</span>
+                    </div>
+                    <div class="quest-reward">
+                        <i class="fas fa-coins"></i> 1500 + <i class="fas fa-gift"></i> Bonus
+                    </div>
+                </div>
+                
+                <div class="quest-card common">
+                    <div class="quest-rarity">COMMON</div>
+                    <div class="quest-icon">
+                        <i class="fas fa-check"></i>
+                        <div class="icon-glow"></div>
+                    </div>
+                    <h3>Daily Check-in</h3>
+                    <p>Complete daily check-in</p>
+                    <div class="quest-progress">
+                        <div class="progress-bar">
+                            <div class="progress-fill completed" data-progress="100"></div>
+                        </div>
+                        <span class="progress-text completed">COMPLETED</span>
+                    </div>
+                    <div class="quest-reward">
+                        <i class="fas fa-coins"></i> 50 + <i class="fas fa-star"></i> 25 XP
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Leaderboard Section -->
+    <section id="leaderboard" class="leaderboard">
+        <div class="container">
+            <h2 class="section-title">🏆 Live Leaderboard</h2>
+            <div class="leaderboard-tabs">
+                <button class="tab-btn active" data-tab="weekly">Weekly Champions</button>
+                <button class="tab-btn" data-tab="monthly">Monthly Legends</button>
+            </div>
+            
+            <div class="leaderboard-content">
+                <div class="podium">
+                    <div class="podium-place second">
+                        <div class="player-avatar">👤</div>
+                        <div class="player-name">Player2</div>
+                        <div class="player-coins"><i class="fas fa-coins"></i> 8,450</div>
+                        <div class="rank-badge silver">2</div>
+                    </div>
+                    <div class="podium-place first">
+                        <div class="crown">👑</div>
+                        <div class="player-avatar">👤</div>
+                        <div class="player-name">Champion</div>
+                        <div class="player-coins"><i class="fas fa-coins"></i> 12,890</div>
+                        <div class="rank-badge gold">1</div>
+                    </div>
+                    <div class="podium-place third">
+                        <div class="player-avatar">👤</div>
+                        <div class="player-name">Player3</div>
+                        <div class="player-coins"><i class="fas fa-coins"></i> 7,230</div>
+                        <div class="rank-badge bronze">3</div>
+                    </div>
+                </div>
+                
+                <div class="leaderboard-list">
+                    <div class="leaderboard-item">
+                        <span class="rank">4</span>
+                        <div class="player-info">
+                            <span class="avatar">👤</span>
+                            <span class="name">EarnMaster</span>
+                        </div>
+                        <span class="coins"><i class="fas fa-coins"></i> 6,890</span>
+                    </div>
+                    <div class="leaderboard-item">
+                        <span class="rank">5</span>
+                        <div class="player-info">
+                            <span class="avatar">👤</span>
+                            <span class="name">CoinHunter</span>
+                        </div>
+                        <span class="coins"><i class="fas fa-coins"></i> 5,670</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Calculator -->
+    <section id="rewards" class="rewards-calc">
+        <div class="container">
+            <h2 class="section-title">💰 Earnings Simulator</h2>
+            <div class="calc-game">
+                <div class="calc-controls">
+                    <div class="control-group">
+                        <label><i class="fas fa-video"></i> Daily Ads</label>
+                        <div class="slider-container">
+                            <input type="range" id="ads" min="1" max="50" value="10" class="game-slider">
+                            <div class="slider-track"></div>
+                        </div>
+                        <span class="value-display" id="ads-value">10</span>
+                    </div>
+                    <div class="control-group">
+                        <label><i class="fas fa-tasks"></i> Daily Quests</label>
+                        <div class="slider-container">
+                            <input type="range" id="tasks" min="0" max="4" value="2" class="game-slider">
+                            <div class="slider-track"></div>
+                        </div>
+                        <span class="value-display" id="tasks-value">2</span>
+                    </div>
+                    <div class="control-group">
+                        <label><i class="fas fa-users"></i> Monthly Referrals</label>
+                        <div class="slider-container">
+                            <input type="range" id="referrals" min="0" max="10" value="1" class="game-slider">
+                            <div class="slider-track"></div>
+                        </div>
+                        <span class="value-display" id="referrals-value">1</span>
+                    </div>
+                </div>
+                
+                <div class="earnings-display">
+                    <div class="earnings-card">
+                        <div class="card-header">
+                            <i class="fas fa-chart-line"></i>
+                            <span>Monthly Potential</span>
+                        </div>
+                        <div class="earnings-amount">
+                            <span class="currency">₹</span>
+                            <span class="amount" id="monthly-earning">450</span>
+                        </div>
+                        <div class="earnings-breakdown">
+                            <div class="breakdown-item">
+                                <span>Ads:</span>
+                                <span id="ads-earning">₹240</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Quests:</span>
+                                <span id="tasks-earning">₹180</span>
+                            </div>
+                            <div class="breakdown-item">
+                                <span>Referrals:</span>
+                                <span id="referrals-earning">₹30</span>
+                            </div>
+                        </div>
+                        <div class="level-up-indicator">
+                            <i class="fas fa-arrow-up"></i>
+                            <span>Level up for 2x bonus!</span>
                         </div>
                     </div>
                 </div>
@@ -78,139 +349,59 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Why Choose EarnBolt?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-video"></i>
-                    </div>
-                    <h3>Watch & Earn</h3>
-                    <p>Watch short video ads and earn coins instantly. Simple and rewarding!</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-tasks"></i>
-                    </div>
-                    <h3>Daily Tasks</h3>
-                    <p>Complete daily tasks and challenges to maximize your earnings.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3>Refer Friends</h3>
-                    <p>Invite friends and earn bonus coins when they complete their first withdrawal.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-fire"></i>
-                    </div>
-                    <h3>Daily Streaks</h3>
-                    <p>Maintain daily check-in streaks for bigger rewards and bonuses.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-mobile-alt"></i>
-                    </div>
-                    <h3>Easy Withdrawals</h3>
-                    <p>Withdraw your earnings via UPI, Paytm, Bank transfer, or gift cards.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3>100% Safe</h3>
-                    <p>Secure platform with guaranteed payments and data protection.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="how-it-works">
-        <div class="container">
-            <h2 class="section-title">How It Works</h2>
-            <div class="steps">
-                <div class="step">
-                    <div class="step-number">1</div>
-                    <div class="step-content">
-                        <h3>Download & Sign Up</h3>
-                        <p>Download EarnBolt app and create your account with Google sign-in.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">2</div>
-                    <div class="step-content">
-                        <h3>Start Earning</h3>
-                        <p>Watch ads, complete tasks, check-in daily, and refer friends to earn coins.</p>
-                    </div>
-                </div>
-                <div class="step">
-                    <div class="step-number">3</div>
-                    <div class="step-content">
-                        <h3>Withdraw Money</h3>
-                        <p>Convert your coins to real money and withdraw via your preferred method.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Earnings Calculator -->
-    <section class="calculator">
-        <div class="container">
-            <h2 class="section-title">Earnings Calculator</h2>
-            <div class="calc-container">
-                <div class="calc-inputs">
-                    <div class="input-group">
-                        <label>Ads per day</label>
-                        <input type="range" id="ads" min="1" max="50" value="10">
-                        <span id="ads-value">10</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Daily tasks</label>
-                        <input type="range" id="tasks" min="0" max="4" value="2">
-                        <span id="tasks-value">2</span>
-                    </div>
-                    <div class="input-group">
-                        <label>Referrals per month</label>
-                        <input type="range" id="referrals" min="0" max="10" value="1">
-                        <span id="referrals-value">1</span>
-                    </div>
-                </div>
-                <div class="calc-result">
-                    <div class="earning-display">
-                        <span class="earning-amount">₹<span id="monthly-earning">450</span></span>
-                        <span class="earning-label">Monthly Earnings</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Download Section -->
-    <section id="download" class="download">
+    <section id="download" class="download-game">
         <div class="container">
-            <h2 class="section-title">Start Earning Today</h2>
-            <p class="download-subtitle">Join thousands of users already earning with EarnBolt</p>
-            <div class="download-buttons">
-                <a href="#" class="download-btn">
-                    <i class="fab fa-google-play"></i>
-                    <div>
-                        <span>Get it on</span>
-                        <strong>Google Play</strong>
+            <div class="download-header">
+                <h2 class="section-title">🚀 Join the Game Now!</h2>
+                <p class="download-subtitle">50,000+ players are already earning. Your adventure awaits!</p>
+            </div>
+            
+            <div class="download-showcase">
+                <div class="achievement-preview">
+                    <div class="achievement-item">
+                        <i class="fas fa-medal"></i>
+                        <span>First Login Bonus: ₹50</span>
                     </div>
-                </a>
-                <a href="#" class="download-btn">
-                    <i class="fab fa-apple"></i>
-                    <div>
-                        <span>Download on the</span>
-                        <strong>App Store</strong>
+                    <div class="achievement-item">
+                        <i class="fas fa-gift"></i>
+                        <span>Welcome Quest: ₹100</span>
                     </div>
-                </a>
+                    <div class="achievement-item">
+                        <i class="fas fa-star"></i>
+                        <span>Referral Bonus: ₹200</span>
+                    </div>
+                </div>
+                
+                <div class="download-buttons">
+                    <a href="#" class="download-btn primary">
+                        <div class="btn-icon">
+                            <i class="fab fa-google-play"></i>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-label">Download on</span>
+                            <strong class="btn-title">Google Play</strong>
+                        </div>
+                        <div class="btn-glow"></div>
+                    </a>
+                    <a href="#" class="download-btn secondary">
+                        <div class="btn-icon">
+                            <i class="fab fa-apple"></i>
+                        </div>
+                        <div class="btn-content">
+                            <span class="btn-label">Download on</span>
+                            <strong class="btn-title">App Store</strong>
+                        </div>
+                        <div class="btn-glow"></div>
+                    </a>
+                </div>
+                
+                <div class="instant-rewards">
+                    <div class="reward-popup active">
+                        <i class="fas fa-coins"></i>
+                        <span>+50 Welcome Coins!</span>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
