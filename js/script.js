@@ -13,101 +13,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 // Mobile menu toggle
-const hamburger = document.querySelector('.hamburger');
-const navMenu = document.querySelector('.nav-menu');
+const mobileMenu = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
 
-if (hamburger && navMenu) {
-    hamburger.addEventListener('click', () => {
-        hamburger.classList.toggle('active');
-        navMenu.classList.toggle('active');
+if (mobileMenu) {
+    mobileMenu.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+        navLinks.classList.toggle('active');
     });
 }
 
-// Animated Counter Function
-function animateCounter(element, target, duration = 2000) {
-    let start = 0;
-    const increment = target / (duration / 16);
-    
-    const timer = setInterval(() => {
-        start += increment;
-        if (start >= target) {
-            element.textContent = target.toLocaleString();
-            clearInterval(timer);
-        } else {
-            element.textContent = Math.floor(start).toLocaleString();
-        }
-    }, 16);
-}
-
-// Initialize counters on page load
-document.addEventListener('DOMContentLoaded', () => {
-    // Animate all counters
-    const counters = document.querySelectorAll('[data-count]');
-    counters.forEach(counter => {
-        const target = parseInt(counter.getAttribute('data-count'));
-        animateCounter(counter, target);
-    });
-    
-    // Initialize XP bar
-    const xpFill = document.querySelector('.xp-fill');
-    if (xpFill) {
-        const xpPercent = xpFill.getAttribute('data-xp');
-        setTimeout(() => {
-            xpFill.style.width = xpPercent + '%';
-        }, 500);
+// Header scroll effect
+window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    if (window.scrollY > 100) {
+        header.style.background = 'rgba(255, 255, 255, 0.98)';
+        header.style.boxShadow = '0 2px 20px rgba(0, 0, 0, 0.1)';
+    } else {
+        header.style.background = 'rgba(255, 255, 255, 0.95)';
+        header.style.boxShadow = 'none';
     }
-    
-    // Initialize quest progress bars
-    const progressBars = document.querySelectorAll('.progress-fill[data-progress]');
-    progressBars.forEach(bar => {
-        const progress = bar.getAttribute('data-progress');
-        setTimeout(() => {
-            bar.style.width = progress + '%';
-        }, 1000);
-    });
-    
-    // Floating coins animation
-    createFloatingCoins();
-    
-    // Achievement popup animation
-    setTimeout(() => {
-        const achievementPopup = document.querySelector('.achievement-popup');
-        if (achievementPopup) {
-            achievementPopup.style.opacity = '1';
-            achievementPopup.style.transform = 'translateY(0)';
-        }
-    }, 3000);
 });
 
-// Create floating coins
-function createFloatingCoins() {
-    const coinsContainer = document.querySelector('.floating-coins');
-    if (!coinsContainer) return;
-    
-    setInterval(() => {
-        if (coinsContainer.children.length < 8) {
-            const coin = document.createElement('i');
-            coin.className = 'fas fa-coins coin';
-            coin.style.left = Math.random() * 100 + '%';
-            coin.style.animationDuration = (Math.random() * 3 + 5) + 's';
-            coin.style.fontSize = (Math.random() * 1 + 1) + 'rem';
-            coinsContainer.appendChild(coin);
-            
-            setTimeout(() => {
-                coin.remove();
-            }, 8000);
-        }
-    }, 2000);
-}
-
-// Earnings calculator with gaming effects
+// Earnings Calculator
 const adsSlider = document.getElementById('ads');
 const tasksSlider = document.getElementById('tasks');
 const referralsSlider = document.getElementById('referrals');
 const adsValue = document.getElementById('ads-value');
 const tasksValue = document.getElementById('tasks-value');
 const referralsValue = document.getElementById('referrals-value');
-const monthlyEarning = document.getElementById('monthly-earning');
+const totalEarning = document.getElementById('total-earning');
 const adsEarning = document.getElementById('ads-earning');
 const tasksEarning = document.getElementById('tasks-earning');
 const referralsEarning = document.getElementById('referrals-earning');
@@ -120,113 +55,55 @@ function updateCalculator() {
     const referrals = parseInt(referralsSlider.value);
     
     // Update display values
-    if (adsValue) adsValue.textContent = ads;
-    if (tasksValue) tasksValue.textContent = tasks;
-    if (referralsValue) referralsValue.textContent = referrals;
+    adsValue.textContent = ads;
+    tasksValue.textContent = tasks;
+    referralsValue.textContent = referrals;
     
-    // Calculate earnings (enhanced rates)
-    const adEarning = ads * 12 * 30; // 12 coins per ad, 30 days
-    const taskEarning = tasks * 150 * 30; // 150 coins per task, 30 days
-    const referralEarning = referrals * 500; // 500 coins per referral
+    // Calculate earnings (realistic rates)
+    const dailyAdEarning = ads * 10; // ₹10 per ad
+    const monthlyAdEarning = dailyAdEarning * 30;
     
-    const totalCoins = adEarning + taskEarning + referralEarning;
-    const totalRupees = Math.floor(totalCoins / 100); // 100 coins = ₹1
+    const dailyTaskEarning = tasks * 75; // ₹75 per task
+    const monthlyTaskEarning = dailyTaskEarning * 30;
     
-    // Update earnings display with animation
-    if (monthlyEarning) {
-        animateCounter(monthlyEarning, totalRupees, 1000);
-    }
+    const monthlyReferralEarning = referrals * 100; // ₹100 per referral
+    
+    const totalMonthly = monthlyAdEarning + monthlyTaskEarning + monthlyReferralEarning;
+    
+    // Update display with animation
+    animateValue(totalEarning, parseInt(totalEarning.textContent.replace(/,/g, '')), totalMonthly, 1000);
     
     // Update breakdown
-    if (adsEarning) adsEarning.textContent = '₹' + Math.floor(adEarning / 100);
-    if (tasksEarning) tasksEarning.textContent = '₹' + Math.floor(taskEarning / 100);
-    if (referralsEarning) referralsEarning.textContent = '₹' + Math.floor(referralEarning / 100);
-    
-    // Add coin animation effect
-    createCoinBurst();
+    adsEarning.textContent = '₹' + monthlyAdEarning.toLocaleString();
+    tasksEarning.textContent = '₹' + monthlyTaskEarning.toLocaleString();
+    referralsEarning.textContent = '₹' + monthlyReferralEarning.toLocaleString();
 }
 
-// Create coin burst effect
-function createCoinBurst() {
-    const earningsCard = document.querySelector('.earnings-card');
-    if (!earningsCard) return;
+// Animate number counting
+function animateValue(element, start, end, duration) {
+    const range = end - start;
+    const increment = range / (duration / 16);
+    let current = start;
     
-    for (let i = 0; i < 5; i++) {
-        const coin = document.createElement('i');
-        coin.className = 'fas fa-coins';
-        coin.style.position = 'absolute';
-        coin.style.color = '#ffd700';
-        coin.style.fontSize = '1rem';
-        coin.style.pointerEvents = 'none';
-        coin.style.left = '50%';
-        coin.style.top = '50%';
-        coin.style.transform = 'translate(-50%, -50%)';
-        coin.style.animation = `coinBurst 1s ease-out forwards`;
-        coin.style.animationDelay = i * 0.1 + 's';
-        
-        earningsCard.appendChild(coin);
-        
-        setTimeout(() => {
-            coin.remove();
-        }, 1000);
-    }
+    const timer = setInterval(() => {
+        current += increment;
+        if ((increment > 0 && current >= end) || (increment < 0 && current <= end)) {
+            current = end;
+            clearInterval(timer);
+        }
+        element.textContent = Math.floor(current).toLocaleString();
+    }, 16);
 }
-
-// Add coin burst animation to CSS
-const coinBurstStyle = document.createElement('style');
-coinBurstStyle.textContent = `
-    @keyframes coinBurst {
-        0% {
-            transform: translate(-50%, -50%) scale(0);
-            opacity: 1;
-        }
-        100% {
-            transform: translate(-50%, -50%) translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px) scale(1);
-            opacity: 0;
-        }
-    }
-`;
-document.head.appendChild(coinBurstStyle);
 
 // Add event listeners for calculator
-if (adsSlider) adsSlider.addEventListener('input', updateCalculator);
-if (tasksSlider) tasksSlider.addEventListener('input', updateCalculator);
-if (referralsSlider) referralsSlider.addEventListener('input', updateCalculator);
-
-// Leaderboard tabs
-const tabBtns = document.querySelectorAll('.tab-btn');
-tabBtns.forEach(btn => {
-    btn.addEventListener('click', () => {
-        tabBtns.forEach(b => b.classList.remove('active'));
-        btn.classList.add('active');
-        
-        // Add tab switch animation
-        const leaderboardContent = document.querySelector('.leaderboard-content');
-        if (leaderboardContent) {
-            leaderboardContent.style.opacity = '0';
-            leaderboardContent.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                leaderboardContent.style.opacity = '1';
-                leaderboardContent.style.transform = 'translateY(0)';
-            }, 200);
-        }
-    });
-});
-
-// Navbar background on scroll with gaming effect
-window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    if (!navbar) return;
+if (adsSlider) {
+    adsSlider.addEventListener('input', updateCalculator);
+    tasksSlider.addEventListener('input', updateCalculator);
+    referralsSlider.addEventListener('input', updateCalculator);
     
-    if (window.scrollY > 100) {
-        navbar.style.background = 'rgba(10, 14, 26, 0.98)';
-        navbar.style.borderBottom = '2px solid rgba(255, 215, 0, 0.5)';
-    } else {
-        navbar.style.background = 'rgba(10, 14, 26, 0.95)';
-        navbar.style.borderBottom = '2px solid rgba(255, 215, 0, 0.2)';
-    }
-});
+    // Initialize calculator
+    updateCalculator();
+}
 
 // Intersection Observer for animations
 const observerOptions = {
@@ -237,62 +114,32 @@ const observerOptions = {
 const observer = new IntersectionObserver((entries) => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-            
-            // Add special effects for quest cards
-            if (entry.target.classList.contains('quest-card')) {
-                entry.target.style.animation = 'questCardAppear 0.8s ease-out forwards';
-            }
+            entry.target.classList.add('fade-in-up');
         }
     });
 }, observerOptions);
 
 // Observe elements for scroll animations
 document.addEventListener('DOMContentLoaded', () => {
-    // Observe quest cards
-    document.querySelectorAll('.quest-card').forEach((card, index) => {
-        card.style.opacity = '0';
-        card.style.transform = 'translateY(50px)';
-        card.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
-        card.style.transitionDelay = index * 0.2 + 's';
+    // Observe feature cards
+    document.querySelectorAll('.feature-card').forEach(card => {
         observer.observe(card);
     });
     
-    // Observe leaderboard items
-    document.querySelectorAll('.leaderboard-item').forEach((item, index) => {
-        item.style.opacity = '0';
-        item.style.transform = 'translateX(-50px)';
-        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        item.style.transitionDelay = index * 0.1 + 's';
-        observer.observe(item);
+    // Observe testimonial cards
+    document.querySelectorAll('.testimonial-card').forEach(card => {
+        observer.observe(card);
+    });
+    
+    // Observe other sections
+    document.querySelectorAll('.section-header').forEach(header => {
+        observer.observe(header);
     });
 });
 
-// Add quest card appear animation
-const questCardStyle = document.createElement('style');
-questCardStyle.textContent = `
-    @keyframes questCardAppear {
-        0% {
-            opacity: 0;
-            transform: translateY(50px) scale(0.9);
-        }
-        50% {
-            opacity: 0.8;
-            transform: translateY(-10px) scale(1.02);
-        }
-        100% {
-            opacity: 1;
-            transform: translateY(0) scale(1);
-        }
-    }
-`;
-document.head.appendChild(questCardStyle);
-
-// Button click effects with gaming feedback
-document.querySelectorAll('.game-btn, .download-btn').forEach(btn => {
-    btn.addEventListener('click', function(e) {
-        // Create ripple effect
+// Add ripple effect to buttons
+document.querySelectorAll('.btn-primary, .btn-secondary, .cta-btn').forEach(button => {
+    button.addEventListener('click', function(e) {
         const ripple = document.createElement('span');
         const rect = this.getBoundingClientRect();
         const size = Math.max(rect.width, rect.height);
@@ -306,44 +153,16 @@ document.querySelectorAll('.game-btn, .download-btn').forEach(btn => {
         
         this.appendChild(ripple);
         
-        // Create coin effect for primary buttons
-        if (this.classList.contains('primary')) {
-            createButtonCoinEffect(this);
-        }
-        
         setTimeout(() => {
             ripple.remove();
         }, 600);
     });
 });
 
-// Create coin effect for button clicks
-function createButtonCoinEffect(button) {
-    for (let i = 0; i < 3; i++) {
-        const coin = document.createElement('i');
-        coin.className = 'fas fa-coins';
-        coin.style.position = 'absolute';
-        coin.style.color = '#ffd700';
-        coin.style.fontSize = '1.2rem';
-        coin.style.pointerEvents = 'none';
-        coin.style.left = '50%';
-        coin.style.top = '50%';
-        coin.style.transform = 'translate(-50%, -50%)';
-        coin.style.animation = `buttonCoinEffect 1s ease-out forwards`;
-        coin.style.animationDelay = i * 0.1 + 's';
-        
-        button.appendChild(coin);
-        
-        setTimeout(() => {
-            coin.remove();
-        }, 1000);
-    }
-}
-
-// Add button coin effect animation
-const buttonCoinStyle = document.createElement('style');
-buttonCoinStyle.textContent = `
-    .game-btn, .download-btn {
+// Add ripple effect styles
+const rippleStyle = document.createElement('style');
+rippleStyle.textContent = `
+    .btn-primary, .btn-secondary, .cta-btn {
         position: relative;
         overflow: hidden;
     }
@@ -351,7 +170,7 @@ buttonCoinStyle.textContent = `
     .ripple {
         position: absolute;
         border-radius: 50%;
-        background: rgba(255, 255, 255, 0.4);
+        background: rgba(255, 255, 255, 0.3);
         transform: scale(0);
         animation: ripple-animation 0.6s linear;
         pointer-events: none;
@@ -363,198 +182,210 @@ buttonCoinStyle.textContent = `
             opacity: 0;
         }
     }
-    
-    @keyframes buttonCoinEffect {
-        0% {
-            transform: translate(-50%, -50%) scale(0) rotate(0deg);
-            opacity: 1;
-        }
-        100% {
-            transform: translate(-50%, -50%) translate(${Math.random() * 100 - 50}px, -80px) scale(1) rotate(360deg);
-            opacity: 0;
-        }
-    }
 `;
-document.head.appendChild(buttonCoinStyle);
+document.head.appendChild(rippleStyle);
 
-// Live stats animation
-function updateLiveStats() {
-    const statNumbers = document.querySelectorAll('.stat-number[data-count]');
-    statNumbers.forEach(stat => {
-        const currentValue = parseInt(stat.textContent.replace(/,/g, ''));
-        const baseValue = parseInt(stat.getAttribute('data-count'));
-        const variation = Math.floor(Math.random() * 100) - 50;
-        const newValue = Math.max(0, baseValue + variation);
-        
-        if (Math.abs(newValue - currentValue) > 10) {
-            animateCounter(stat, newValue, 1000);
-        }
+// Parallax effect for floating shapes
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const shapes = document.querySelectorAll('.floating-shape');
+    
+    shapes.forEach((shape, index) => {
+        const speed = 0.5 + (index * 0.1);
+        shape.style.transform = `translateY(${scrolled * speed}px)`;
     });
-}
+});
 
-// Update live stats every 10 seconds
-setInterval(updateLiveStats, 10000);
+// Add loading animation
+window.addEventListener('load', () => {
+    document.body.classList.add('loaded');
+});
 
-// Achievement notification system
-function showAchievement(title, description, icon = 'fas fa-trophy') {
-    const achievement = document.createElement('div');
-    achievement.className = 'achievement-notification';
-    achievement.innerHTML = `
-        <i class="${icon}"></i>
-        <div class="achievement-content">
-            <div class="achievement-title">${title}</div>
-            <div class="achievement-desc">${description}</div>
-        </div>
-    `;
-    
-    document.body.appendChild(achievement);
-    
-    setTimeout(() => {
-        achievement.classList.add('show');
-    }, 100);
-    
-    setTimeout(() => {
-        achievement.classList.remove('show');
-        setTimeout(() => {
-            achievement.remove();
-        }, 300);
-    }, 4000);
-}
-
-// Add achievement notification styles
-const achievementStyle = document.createElement('style');
-achievementStyle.textContent = `
-    .achievement-notification {
-        position: fixed;
-        top: 100px;
-        right: -400px;
-        background: linear-gradient(45deg, #ffd700, #ffb347);
-        color: #000;
-        padding: 1rem 1.5rem;
-        border-radius: 15px;
-        display: flex;
-        align-items: center;
-        gap: 1rem;
-        box-shadow: 0 10px 30px rgba(255, 215, 0, 0.3);
-        z-index: 10000;
-        transition: right 0.3s ease;
-        max-width: 350px;
+// Add loading styles
+const loadingStyle = document.createElement('style');
+loadingStyle.textContent = `
+    body {
+        opacity: 0;
+        transition: opacity 0.5s ease;
     }
     
-    .achievement-notification.show {
-        right: 20px;
+    body.loaded {
+        opacity: 1;
     }
     
-    .achievement-notification i {
-        font-size: 2rem;
-        animation: achievementGlow 1s infinite;
+    .hero-badge {
+        animation-delay: 0.2s;
     }
     
-    .achievement-title {
-        font-weight: bold;
-        font-size: 1.1rem;
+    .hero-title {
+        animation: fadeInUp 0.8s ease-out 0.4s both;
     }
     
-    .achievement-desc {
-        font-size: 0.9rem;
-        opacity: 0.8;
+    .hero-subtitle {
+        animation: fadeInUp 0.8s ease-out 0.6s both;
     }
     
-    @keyframes achievementGlow {
-        0%, 100% { transform: scale(1); }
-        50% { transform: scale(1.1); }
+    .hero-stats {
+        animation: fadeInUp 0.8s ease-out 0.8s both;
+    }
+    
+    .hero-buttons {
+        animation: fadeInUp 0.8s ease-out 1s both;
+    }
+    
+    .phone-mockup {
+        animation: fadeInUp 0.8s ease-out 0.6s both;
     }
 `;
-document.head.appendChild(achievementStyle);
+document.head.appendChild(loadingStyle);
 
-// Trigger sample achievements
-setTimeout(() => {
-    showAchievement('Welcome!', 'You discovered EarnBolt!', 'fas fa-star');
-}, 2000);
-
-setTimeout(() => {
-    showAchievement('Explorer', 'Viewing earning potential!', 'fas fa-search');
-}, 8000);
-
-// Add particle system for background
-function createParticleSystem() {
-    const particleContainer = document.createElement('div');
-    particleContainer.className = 'particle-system';
-    particleContainer.style.cssText = `
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        pointer-events: none;
-        z-index: 0;
-    `;
+// Add hover effects for feature cards
+document.querySelectorAll('.feature-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-10px) scale(1.02)';
+    });
     
-    document.body.appendChild(particleContainer);
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0) scale(1)';
+    });
+});
+
+// Add hover effects for testimonial cards
+document.querySelectorAll('.testimonial-card').forEach(card => {
+    card.addEventListener('mouseenter', () => {
+        card.style.transform = 'translateY(-5px)';
+        card.style.boxShadow = '0 20px 60px rgba(0, 0, 0, 0.15)';
+    });
     
-    setInterval(() => {
-        if (particleContainer.children.length < 15) {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            particle.style.cssText = `
-                position: absolute;
-                width: 4px;
-                height: 4px;
-                background: #ffd700;
-                border-radius: 50%;
-                left: ${Math.random() * 100}%;
-                top: 100%;
-                animation: particleFloat ${Math.random() * 10 + 10}s linear forwards;
-                opacity: ${Math.random() * 0.5 + 0.2};
-            `;
-            
-            particleContainer.appendChild(particle);
-            
-            setTimeout(() => {
-                particle.remove();
-            }, 20000);
+    card.addEventListener('mouseleave', () => {
+        card.style.transform = 'translateY(0)';
+        card.style.boxShadow = '0 10px 40px rgba(0, 0, 0, 0.1)';
+    });
+});
+
+// Add typing effect to hero title
+function typeWriter(element, text, speed = 100) {
+    let i = 0;
+    element.innerHTML = '';
+    
+    function type() {
+        if (i < text.length) {
+            element.innerHTML += text.charAt(i);
+            i++;
+            setTimeout(type, speed);
+        }
+    }
+    
+    type();
+}
+
+// Initialize typing effect on load
+document.addEventListener('DOMContentLoaded', () => {
+    setTimeout(() => {
+        const heroTitle = document.querySelector('.hero-title');
+        if (heroTitle) {
+            const originalText = heroTitle.innerHTML;
+            // Uncomment below line to enable typing effect
+            // typeWriter(heroTitle, originalText.replace(/<[^>]*>/g, ''), 50);
         }
     }, 1000);
+});
+
+// Add smooth reveal animation for sections
+const revealSections = document.querySelectorAll('section');
+const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateY(0)';
+        }
+    });
+}, {
+    threshold: 0.1
+});
+
+revealSections.forEach(section => {
+    section.style.opacity = '0';
+    section.style.transform = 'translateY(30px)';
+    section.style.transition = 'all 0.8s ease';
+    revealObserver.observe(section);
+});
+
+// Add counter animation for stats
+function animateCounters() {
+    const counters = document.querySelectorAll('.stat-number');
+    
+    counters.forEach(counter => {
+        const target = counter.textContent;
+        const numericTarget = parseInt(target.replace(/[^\d]/g, ''));
+        
+        if (numericTarget) {
+            animateValue(counter, 0, numericTarget, 2000);
+        }
+    });
 }
 
-// Add particle animation
-const particleStyle = document.createElement('style');
-particleStyle.textContent = `
-    @keyframes particleFloat {
-        0% {
-            transform: translateY(0) translateX(0);
+// Trigger counter animation when stats come into view
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            animateCounters();
+            statsObserver.unobserve(entry.target);
         }
-        100% {
-            transform: translateY(-100vh) translateX(${Math.random() * 200 - 100}px);
+    });
+}, { threshold: 0.5 });
+
+const heroStats = document.querySelector('.hero-stats');
+if (heroStats) {
+    statsObserver.observe(heroStats);
+}
+
+// Add mobile menu styles
+const mobileMenuStyle = document.createElement('style');
+mobileMenuStyle.textContent = `
+    @media (max-width: 768px) {
+        .nav-links {
+            position: fixed;
+            top: 80px;
+            left: -100%;
+            width: 100%;
+            height: calc(100vh - 80px);
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            padding-top: 2rem;
+            transition: left 0.3s ease;
+            z-index: 999;
+        }
+        
+        .nav-links.active {
+            left: 0;
+        }
+        
+        .nav-links a {
+            font-size: 1.2rem;
+            margin: 1rem 0;
+            padding: 1rem 2rem;
+            width: 80%;
+            text-align: center;
+            border-radius: 10px;
+        }
+        
+        .mobile-menu.active span:nth-child(1) {
+            transform: rotate(-45deg) translate(-5px, 6px);
+        }
+        
+        .mobile-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        
+        .mobile-menu.active span:nth-child(3) {
+            transform: rotate(45deg) translate(-5px, -6px);
         }
     }
 `;
-document.head.appendChild(particleStyle);
+document.head.appendChild(mobileMenuStyle);
 
-// Initialize particle system
-document.addEventListener('DOMContentLoaded', () => {
-    createParticleSystem();
-});
-
-// Add sound effects (optional - can be enabled later)
-function playSound(type) {
-    // Placeholder for sound effects
-    // Can add Web Audio API sounds later
-    console.log(`Playing ${type} sound effect`);
-}
-
-// Add hover effects for interactive elements
-document.addEventListener('DOMContentLoaded', () => {
-    // Add hover sound effects
-    document.querySelectorAll('.game-btn, .quest-card, .download-btn').forEach(element => {
-        element.addEventListener('mouseenter', () => {
-            playSound('hover');
-        });
-        
-        element.addEventListener('click', () => {
-            playSound('click');
-        });
-    });
-});
-
-console.log('🎮 EarnBolt Gaming Website Loaded! 🚀');
+console.log('🚀 EarnBolt Website Loaded Successfully!');
