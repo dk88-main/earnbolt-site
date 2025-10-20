@@ -1,0 +1,10 @@
+# Exclude large files from Cloudflare deployment
+IBD3D/
+*.glb
+*.mp4
+*.zip
+*.rar
+*.exe
+
+# Keep only essential files for deployment
+!IBD3D/.htaccess
