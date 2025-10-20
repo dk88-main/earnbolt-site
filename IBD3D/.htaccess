@@ -1,5 +1,0 @@
-# Force download for all GLB files
-<FilesMatch "\.(glb)$">
-    ForceType application/octet-stream
-    Header set Content-Disposition "attachment"
-</FilesMatch>
