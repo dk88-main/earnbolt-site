@@ -7,63 +7,63 @@ header('Access-Control-Allow-Headers: Content-Type');
 // File storage configuration
 $FILE_STORAGE = [
     // Animal Plugins
-    'bee_plugin' => [
-        'path' => '../files/plugins/ANIMAL_PLUGINS/PLUGIN FILES/Bee_PLUGIN',
-        'name' => 'Bee_PLUGIN',
-        'type' => 'application/octet-stream',
+    'bee' => [
+        'path' => '../files/plugins/animals/Bee_PLUGIN.zip',
+        'name' => 'Bee_Plugin.zip',
+        'type' => 'application/zip',
         'size' => 2500000
     ],
-    'godzilla_plugin' => [
-        'path' => '../files/plugins/ANIMAL_PLUGINS/PLUGIN FILES/GodZilla_PLUGIN',
-        'name' => 'GodZilla_PLUGIN',
-        'type' => 'application/octet-stream',
+    'godzilla' => [
+        'path' => '../files/plugins/animals/GodZilla_PLUGIN.zip',
+        'name' => 'GodZilla_Plugin.zip',
+        'type' => 'application/zip',
         'size' => 5200000
     ],
-    'deer_plugin' => [
-        'path' => '../files/plugins/ANIMAL_PLUGINS/PLUGIN FILES/Deer_PLUGIN',
-        'name' => 'Deer_PLUGIN',
-        'type' => 'application/octet-stream',
+    'deer' => [
+        'path' => '../files/plugins/animals/Deer_PLUGIN.zip',
+        'name' => 'Deer_Plugin.zip',
+        'type' => 'application/zip',
         'size' => 3100000
     ],
     
     // Vehicle Plugins
-    'invisible_car' => [
-        'path' => '../files/plugins/VEHICLE PLUGINS/PLUGIN FILES/InvisibleCar_PLUGIN',
-        'name' => 'InvisibleCar_PLUGIN',
-        'type' => 'application/octet-stream',
+    'invisiblecar' => [
+        'path' => '../files/plugins/vehicles/InvisibleCar_PLUGIN.zip',
+        'name' => 'InvisibleCar_Plugin.zip',
+        'type' => 'application/zip',
         'size' => 1800000
     ],
-    'kgf_bike' => [
-        'path' => '../files/plugins/VEHICLE PLUGINS/PLUGIN FILES/KGF_Bike_PLUGIN',
-        'name' => 'KGF_Bike_PLUGIN',
-        'type' => 'application/octet-stream',
+    'kgfbike' => [
+        'path' => '../files/plugins/vehicles/KGF_Bike_PLUGIN.zip',
+        'name' => 'KGF_Bike_Plugin.zip',
+        'type' => 'application/zip',
         'size' => 4200000
     ],
     
     // Mission Plugins
-    'mission1_mod' => [
-        'path' => '../files/plugins/MISSION PLUGINS/PLUGIN FILES/Mission1_MOD.json',
+    'mission1' => [
+        'path' => '../files/plugins/missions/Mission1_MOD.json',
         'name' => 'Mission1_MOD.json',
         'type' => 'application/json',
         'size' => 850000
     ],
-    'mission2_mod' => [
-        'path' => '../files/plugins/MISSION PLUGINS/PLUGIN FILES/Mission2_MOD.json',
+    'mission2' => [
+        'path' => '../files/plugins/missions/Mission2_MOD.json',
         'name' => 'Mission2_MOD.json',
         'type' => 'application/json',
         'size' => 920000
     ],
     
     // RGS Load Files
-    'buggy_car' => [
-        'path' => '../files/plugins/RGS LOAD FILES/LOAD FILES/Buggy.glb',
+    'buggy' => [
+        'path' => '../files/plugins/rgs/Buggy.glb',
         'name' => 'Buggy.glb',
         'type' => 'model/gltf-binary',
         'size' => 15200000
     ],
-    'bujji_car' => [
-        'path' => '../files/plugins/RGS LOAD FILES/LOAD FILES/bujji.glb',
-        'name' => 'bujji.glb',
+    'bujji' => [
+        'path' => '../files/plugins/rgs/bujji.glb',
+        'name' => 'Bujji.glb',
         'type' => 'model/gltf-binary',
         'size' => 18700000
     ]
@@ -83,7 +83,7 @@ function downloadFile($fileKey) {
     
     if (!file_exists($filePath)) {
         http_response_code(404);
-        echo json_encode(['error' => 'File does not exist: ' . $filePath]);
+        echo json_encode(['error' => 'File does not exist on server']);
         return;
     }
     
