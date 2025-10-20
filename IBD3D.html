@@ -129,16 +129,24 @@
         const urlParams = new URLSearchParams(window.location.search);
         const fileName = urlParams.get('file');
         
-        const DRIVE_FOLDER_ID = '1-Cm2bxaZRIoHxDbtQ7-JMmwRC-19nfxh';
-        
         const plugins = {
-            'bee_plugin': { name: 'Bee Plugin', size: '2.5 MB', type: 'Animal Plugin' },
-            'godzilla_plugin': { name: 'GodZilla Plugin', size: '5.2 MB', type: 'Animal Plugin' },
-            'deer_plugin': { name: 'Deer Plugin', size: '3.1 MB', type: 'Animal Plugin' },
-            'invisible_car': { name: 'Invisible Car', size: '1.8 MB', type: 'Vehicle Plugin' },
-            'kgf_bike': { name: 'KGF Bike', size: '4.2 MB', type: 'Vehicle Plugin' },
-            'mission1_mod': { name: 'Mission 1 MOD', size: '850 KB', type: 'Mission Plugin' },
-            'buggy_car': { name: 'Buggy Car', size: '15.2 MB', type: 'RGS Load File' }
+            'bee_plugin': { name: 'Bee Plugin', size: '2.5 MB', type: 'Animal Plugin', fileId: '1lf09HwSkOX_uGdYOKLyogUqUZc3Qmcss' },
+            'camel_plugin': { name: 'Camel Plugin', size: '3.2 MB', type: 'Animal Plugin', fileId: '1e0pZHYh-dkCDZWVhVDOtLYB-gGsVworu' },
+            'crocodile_plugin': { name: 'Crocodile Plugin', size: '4.5 MB', type: 'Animal Plugin', fileId: '1U5TcrkTxpVPomDxyREhXZKTxsXhQYMAA' },
+            'deer_plugin': { name: 'Deer Plugin', size: '3.1 MB', type: 'Animal Plugin', fileId: '17YqBNswLdNkmOdor26oCd36iypqd2ZeD' },
+            'eagle_plugin': { name: 'Eagle Animal Plugin', size: '3.7 MB', type: 'Animal Plugin', fileId: '1DzrlVRRU--ItT2uAn9uUJEZQtHXLe0IC' },
+            'godzilla_plugin': { name: 'GodZilla Plugin', size: '5.2 MB', type: 'Animal Plugin', fileId: '1k1ZMxdFs8x8UOokiePCaFU9fTNxsy2rQ' },
+            'gorilla_plugin': { name: 'Gorilla Plugin', size: '4.8 MB', type: 'Animal Plugin', fileId: '1N4T2vhlKxb8DUr4jkYQz9gCdVn2h3XFp' },
+            'hipo_plugin': { name: 'Hipo Plugin', size: '4.3 MB', type: 'Animal Plugin', fileId: '16BfndQJRVCbBFgYHBK1JYThWo_gUYKcW' },
+            'jiraffe_plugin': { name: 'Jiraffe Plugin', size: '4.0 MB', type: 'Animal Plugin', fileId: '1q6JMADSNIr8D95Tk0N_sZcm5oPmL9H55' },
+            'lion_plugin': { name: 'Lion Plugin', size: '5.1 MB', type: 'Animal Plugin', fileId: '1wNAQD8jEU7_G9agN6JwnslaY965ucESv' },
+            'lionf_plugin': { name: 'Lion Female Plugin', size: '4.9 MB', type: 'Animal Plugin', fileId: '1DsuLvctvkoiHRVLpCfVv08L1W3nL1qxe' },
+            'monster_big_plugin': { name: 'Monster Big Plugin', size: '6.2 MB', type: 'Animal Plugin', fileId: '1DsuLvctvkoiHRVLpCfVv08L1W3nL1qxe' },
+            'peacock_plugin': { name: 'Peacock Plugin', size: '3.8 MB', type: 'Animal Plugin', fileId: '1QWOQ8VGN__44b2f6dNahZg7dPexhB_OI' },
+            'raino_plugin': { name: 'Raino Plugin', size: '4.4 MB', type: 'Animal Plugin', fileId: '11gSSLpugLymamtA7RTlpDOf0dUOyhHPq' },
+            'snake_monster_plugin': { name: 'Snake Monster Plugin', size: '5.5 MB', type: 'Animal Plugin', fileId: '1AvXIATWwG6_cnDqGLrEMP6AHlmnnhRof' },
+            'wildbeast_plugin': { name: 'Wildbeast Plugin', size: '4.1 MB', type: 'Animal Plugin', fileId: '1iojH8R0vuXocPnGGSc3lkv7_nG_j9f68' },
+            'zebra_plugin': { name: 'Zebra Plugin', size: '3.9 MB', type: 'Animal Plugin', fileId: '1cvJqIF0qH5R39tbd7xqrO7oYGhvNhMDm' }
         };
 
         function showDownload() {
@@ -154,7 +162,7 @@
             }
 
             const plugin = plugins[fileName];
-            const driveUrl = `https://drive.google.com/drive/folders/${DRIVE_FOLDER_ID}`;
+            const driveUrl = `https://drive.google.com/uc?export=download&id=${plugin.fileId}`;
             
             content.innerHTML = `
                 <div class="icon">🎮</div>
@@ -175,7 +183,7 @@
                     </div>
                 </div>
                 <a href="${driveUrl}" class="download-btn" target="_blank">
-                    📂 Open Download Folder
+                    📥 Download Now
                 </a>
             `;
         }
