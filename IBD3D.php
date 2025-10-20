@@ -1,54 +1,38 @@
 <?php
-$requestUri = $_SERVER['REQUEST_URI'];
-$filename = '';
+// File mapping for IBD3D downloads
+$files = [
+    'GTA5CITYIBD3D.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/GTA5CITYIBD3D.glb',
+    'motupatlunpc.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/motupatlunpc.glb',
+    'shinchan.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/shinchan.glb',
+    'doremon.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/doremon.glb',
+    'bullmen.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/bullmen.glb',
+    'Buggy.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/Buggy.glb',
+    'bujji.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/bujji.glb',
+    'dancing_twerk.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/dancing_twerk.glb',
+    'Dragon_Head.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/Dragon_Head.glb',
+    'franklin.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/franklin.glb',
+    'girl.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/girl.glb',
+    'HoverBike.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/HoverBike.glb',
+    'mcqueencar.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/mcqueencar.glb',
+    'Micheal.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/Micheal.glb',
+    'primo_dancing.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/primo_dancing.glb',
+    'pumpkinBoy.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/pumpkinBoy.glb',
+    'rollsroyce.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/rollsroyce.glb',
+    'Royal_Enfield_Hunter.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/Royal_Enfield_Hunter.glb',
+    'ShopingKart.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/ShopingKart.glb',
+    'trevor.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/trevor.glb',
+    'Truck.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/Truck.glb',
+    'Tung Tung.glb' => 'https://media.githubusercontent.com/media/dk88-main/earnbolt-files/main/Tung%20Tung.glb'
+];
 
-// Extract filename from URL
-if (preg_match('/\/IBD3D\/(.+\.glb)/', $requestUri, $matches)) {
-    $filename = $matches[1];
-    $filepath = "IBD3D FILES/" . $filename;
-    
-    // Check if file exists and start download
-    if (file_exists($filepath)) {
-        header('Content-Type: application/octet-stream');
-        header('Content-Disposition: attachment; filename="' . $filename . '"');
-        header('Content-Length: ' . filesize($filepath));
-        readfile($filepath);
-        exit;
-    }
+$path = $_SERVER['REQUEST_URI'];
+$filename = basename($path);
+
+if (isset($files[$filename])) {
+    header('Location: ' . $files[$filename]);
+    exit;
+} else {
+    http_response_code(404);
+    echo "File not found";
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>IBD3D - EarnBolt</title>
-    <meta name="robots" content="noindex, nofollow">
-    <link rel="stylesheet" href="css/style.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>IBD3D Access Page</h1>
-        </header>
-        
-        <main style="padding: 2rem; text-align: center;">
-            <div class="hero-content">
-                <h2>Welcome to IBD3D</h2>
-                <p>This is a special access page for IBD3D users.</p>
-                
-                <div class="features-grid" style="margin-top: 2rem;">
-                    <div class="feature-card">
-                        <h3>Exclusive Content</h3>
-                        <p>Access to special features and content.</p>
-                    </div>
-                </div>
-                
-                <a href="index.html" class="cta-button" style="margin-top: 2rem; display: inline-block;">
-                    Back to Home
-                </a>
-            </div>
-        </main>
-    </div>
-</body>
-</html>
