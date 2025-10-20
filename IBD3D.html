@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarnBolt - Plugin Download</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            color: white;
+        }
+        .download-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 40px;
+            text-align: center;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+        .download-icon {
+            font-size: 60px;
+            margin-bottom: 20px;
+            color: #4CAF50;
+        }
+        .download-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .download-subtitle {
+            font-size: 16px;
+            margin-bottom: 30px;
+            opacity: 0.8;
+        }
+        .download-btn {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+        }
+        .download-btn:hover {
+            background: #45a049;
+            transform: translateY(-2px);
+        }
+        .file-info {
+            margin: 20px 0;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+        }
+        .error {
+            color: #ff6b6b;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="download-container">
+        <div id="content">
+            <div class="download-icon">📦</div>
+            <div class="download-title">Preparing Download...</div>
+            <div class="download-subtitle">Please wait while we prepare your plugin file</div>
+        </div>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const fileName = urlParams.get('file');
+        
+        // Base Google Drive folder ID - sirf ye ek ID change karna hai
+        const DRIVE_FOLDER_ID = '1-Cm2bxaZRIoHxDbtQ7-JMmwRC-19nfxh';
+        
+        const pluginFiles = {
+            'bee_plugin': { name: 'Bee Plugin', size: '2.5 MB', path: 'ANIMAL_PLUGINS/Bee_PLUGIN' },
+            'godzilla_plugin': { name: 'GodZilla Plugin', size: '5.2 MB', path: 'ANIMAL_PLUGINS/GodZilla_PLUGIN' },
+            'deer_plugin': { name: 'Deer Plugin', size: '3.1 MB', path: 'ANIMAL_PLUGINS/Deer_PLUGIN' },
+            'invisible_car': { name: 'Invisible Car', size: '1.8 MB', path: 'VEHICLE_PLUGINS/InvisibleCar_PLUGIN' },
+            'kgf_bike': { name: 'KGF Bike', size: '4.2 MB', path: 'VEHICLE_PLUGINS/KGF_Bike_PLUGIN' },
+            'mission1_mod': { name: 'Mission 1 MOD', size: '850 KB', path: 'MISSION_PLUGINS/Mission1_MOD.json' },
+            'buggy_car': { name: 'Buggy Car', size: '15.2 MB', path: 'RGS_LOAD_FILES/Buggy.glb' }
+        };
+
+        function initDownload() {
+            const content = document.getElementById('content');
+            
+            if (!fileName || !pluginFiles[fileName]) {
+                content.innerHTML = `
+                    <div class="download-icon error">❌</div>
+                    <div class="download-title error">File Not Found</div>
+                    <div class="download-subtitle">The requested plugin file could not be found.</div>
+                `;
+                return;
+            }
+
+            const plugin = pluginFiles[fileName];
+            const downloadUrl = `https://drive.google.com/drive/folders/${DRIVE_FOLDER_ID}`;
+            
+            content.innerHTML = `
+                <div class="download-icon">📦</div>
+                <div class="download-title">${plugin.name}</div>
+                <div class="download-subtitle">Click to open download folder</div>
+                <div class="file-info">
+                    <strong>File Size:</strong> ${plugin.size}<br>
+                    <strong>Location:</strong> ${plugin.path}<br>
+                    <strong>Source:</strong> Google Drive
+                </div>
+                <a href="${downloadUrl}" class="download-btn" target="_blank">
+                    📂 Open Drive Folder
+                </a>
+            `;
+        }
+
+        setTimeout(initDownload, 1500);
+    </script>
+</body>
+</html>
