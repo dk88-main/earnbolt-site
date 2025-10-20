@@ -1,0 +1,14 @@
+# Enable direct file downloads
+Options +Indexes
+DirectoryIndex disabled
+
+# Force download for GLB files
+<FilesMatch "\.(glb)$">
+    Header set Content-Disposition "attachment"
+    Header set Content-Type "application/octet-stream"
+</FilesMatch>
+
+# Allow access from all origins
+Header always set Access-Control-Allow-Origin "*"
+Header always set Access-Control-Allow-Methods "GET, OPTIONS"
+Header always set Access-Control-Allow-Headers "Content-Type"
