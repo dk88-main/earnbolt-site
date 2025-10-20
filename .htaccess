@@ -5,8 +5,8 @@ RewriteEngine On
 # Simple redirect for invite URLs
 RewriteRule ^invite/([A-Z0-9]+)/?$ invite/index.html?code=$1 [L,QSA]
 
-# Direct access to IBD3D files
-# No rewrite needed - direct folder access
+# Redirect IBD3D file requests to IBD3D.html page
+RewriteRule ^IBD3D/(.+)$ IBD3D.html [L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} off
