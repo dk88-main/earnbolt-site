@@ -69,35 +69,85 @@
     </div>
 
     <script>
-        // GitHub download links
+        // GitHub download links - Replace YOUR_USERNAME with your GitHub username
         const GITHUB_LINKS = {
             // Animal Plugins
-            'bee_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Bee_PLUGIN.zip',
-            'godzilla_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/GodZilla_PLUGIN.zip',
-            'deer_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Deer_PLUGIN.zip',
-            'camel_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Camel_PLUGIN.zip',
-            'crocodile_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Crocodile_PLUGIN.zip',
-            'eagle_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Eagle_Animal_PLUGIN.zip',
-            'gorilla_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Gorilla_PLUGIN.zip',
-            'lion_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Lion_PLUGIN.zip',
-            'zebra_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Zebra_PLUGIN.zip',
+            'bee_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Bee_PLUGIN',
+            'godzilla_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/GodZilla_PLUGIN',
+            'deer_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Deer_PLUGIN',
+            'hipo_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Hipo_PLUGIN',
+            'peacock_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/PeaCock_PLUGIN',
+            'wildbeast_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Wildbeast_PLUGIN',
+            'camel_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Camel_PLUGIN',
+            'crocodile_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Crocodile_PLUGIN',
+            'eagle_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Eagle_Animal_PLUGIN',
+            'gorilla_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Gorilla_PLUGIN',
+            'lion_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Lion_PLUGIN',
+            'zebra_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Zebra_PLUGIN',
             
             // Vehicle Plugins
-            'invisible_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/InvisibleCar_PLUGIN.zip',
-            'kgf_bike': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/KGF_Bike_PLUGIN.zip',
-            'farm_tractor': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Farm_Tractor_PLUGIN.zip',
-            'range_rover': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/RangeRover_PLUGIN.zip',
-            'swift_2024': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Swift_2024_PLUGIN.zip',
+            'invisible_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/InvisibleCar_PLUGIN',
+            'kgf_bike': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/KGF_Bike_PLUGIN',
+            'farm_tractor': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Farm_Tractor_PLUGIN',
+            'range_rover': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/RangeRover_PLUGIN',
+            'swift_2024': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Swift_2024_PLUGIN',
+            'omni_van': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Omni_Van_PLUGIN',
+            'pig_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/PigCar_PLUGIN',
+            'terzo_lambo': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Terzo_Lambo_PLUGIN',
             
             // Mission Plugins
             'mission1_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission1_MOD.json',
             'mission2_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission2_MOD.json',
             'mission3_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission3_MOD.json',
+            'mission4_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission4_MOD.json',
+            'mission5_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission5_MOD.json',
+            'mission6_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission6_MOD.json',
+            'mission7_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission7_MOD.json',
+            
+            // City Plugins
+            'egypt_city': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/E%26PS_by_Aysheq.json',
+            'village_map': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/villagemap',
+            'zoo_map': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Zoo_By_Topical_Gamer.json',
+            'doraemon_house': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/doreamon_house_by_cim_list.json',
+            
+            // Player Plugins
+            'beast_player': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Beast_PLUGIN',
+            'carry_player': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Carry_PLUGIN',
+            'giraf_cartoon': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/GirafCartoon_PLUGIN',
+            'monkey_player': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Monkey__PLUGIN',
+            'skeleton_player': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Skeleton_PLUGIN',
+            'pgs_player': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/PGS_PLUGIN',
             
             // RGS Load Files
             'buggy_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Buggy.glb',
             'bujji_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/bujji.glb',
             'doremon_char': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/doremon.glb',
+            'franklin_char': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/franklin.glb',
+            'shinchan_char': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/shinchan.glb',
+            'dragon_head': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Dragon_Head.glb',
+            'girl_char': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/girl.glb',
+            'hover_bike': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/HoverBike.glb',
+            'mcqueen_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/mcqueencar.glb',
+            'trevor_char': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/trevor.glb',
+            
+            // Challenge Plugins
+            'horror_ghost': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/HorrorGhost_PLUGIN',
+            'zombie_challenge': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/ZombieMode6_PLUGIN',
+            'city_v2': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/CityV2_PLUGIN',
+            'race_track': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/RaceTrack_PLUGIN',
+            
+            // RGS MOD Plugins
+            'build_destroy': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Build_Destroy_MOD.json',
+            'funntyaa_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Funntyaa_MOD.json',
+            'gaming_boy': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/gaming_boy_3609_MOD.json',
+            'jay_plays': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Jay_Plays_MOD.json',
+            'mega_ramp': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/RGS_MegaRamp_MOD.json',
+            
+            // IPL Texture Plugins
+            'csk_texture': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/csk.jpg',
+            'mi_texture': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/mi.jpg',
+            'rcb_texture': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/rcb.jpg',
+            'kkr_texture': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/kkr.jpg'
         };
 
         function getFileParam() {
