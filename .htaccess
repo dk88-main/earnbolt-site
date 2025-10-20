@@ -8,6 +8,9 @@ RewriteRule ^invite/([A-Z0-9]+)/?$ invite/index.html?code=$1 [L,QSA]
 # Redirect all IBD3D file requests to IBD3D.html page
 RewriteRule ^IBD3D/(.+\.glb)$ IBD3D.html [L]
 
+# Allow direct access to IBD3D FILES folder
+RewriteRule ^IBD3D%20FILES/(.+)$ "IBD3D FILES/$1" [L]
+
 # Force HTTPS
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
