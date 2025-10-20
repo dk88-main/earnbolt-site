@@ -19,7 +19,7 @@ define('FIREBASE_PROJECT_ID', 'your-actual-project-id');
 ## 3. Test the System
 
 1. Upload all files to `earnbolt.in`
-2. Test URL: `earnbolt.in/invite/REALCODE` (use actual referral code from your app)
+2. Test URL: `earnbolt.in/invite/REALCODE` (use actual referral code from your app)ihuih
 3. Should show referrer's name from Firebase database
 
 ## 4. How It Works
