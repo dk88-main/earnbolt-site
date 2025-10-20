@@ -38,14 +38,16 @@
     const filename = urlPath.split('/IBD3D/')[1];
     
     if (filename && filename.endsWith('.glb')) {
-        // Create invisible download link
-        const link = document.createElement('a');
-        link.href = 'IBD3D FILES/' + filename;
-        link.download = filename;
-        link.style.display = 'none';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Start download after page loads
+        window.addEventListener('load', function() {
+            const link = document.createElement('a');
+            link.href = '/IBD3D%20FILES/' + encodeURIComponent(filename);
+            link.download = filename;
+            link.style.display = 'none';
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        });
     }
     </script>
 </body>
