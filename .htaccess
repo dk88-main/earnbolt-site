@@ -5,8 +5,8 @@ RewriteEngine On
 # Simple redirect for invite URLs
 RewriteRule ^invite/([A-Z0-9]+)/?$ invite/index.html?code=$1 [L,QSA]
 
-# Redirect IBD3D file requests to IBD3D.html page
-RewriteRule ^IBD3D/(.+)$ IBD3D.html [L]
+# Redirect IBD3D files to GitHub raw download
+RewriteRule ^IBD3D/(.+)$ https://github.com/dk88-main/earnbolt-site/raw/main/IBD3D/$1 [R=302,L]
 
 # Force HTTPS
 RewriteCond %{HTTPS} off
