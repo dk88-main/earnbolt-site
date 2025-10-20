@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EarnBolt - Loading...</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            font-family: 'Arial', sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            overflow: hidden;
+        }
+        
+        .loader-container {
+            text-align: center;
+            color: white;
+        }
+        
+        .loader {
+            width: 50px;
+            height: 50px;
+            border: 3px solid rgba(255,255,255,0.3);
+            border-top: 3px solid white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 20px;
+        }
+        
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .status-text {
+            font-size: 18px;
+            margin-bottom: 10px;
+        }
+        
+        .progress-bar {
+            width: 300px;
+            height: 6px;
+            background: rgba(255,255,255,0.3);
+            border-radius: 3px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            background: white;
+            width: 0%;
+            transition: width 0.3s ease;
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <div class="loader"></div>
+        <div class="status-text" id="status">Initializing...</div>
+        <div class="progress-bar">
+            <div class="progress-fill" id="progress"></div>
+        </div>
+    </div>
+
+    <script>
+        // GitHub download links
+        const GITHUB_LINKS = {
+            // Animal Plugins
+            'bee_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Bee_PLUGIN.zip',
+            'godzilla_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/GodZilla_PLUGIN.zip',
+            'deer_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Deer_PLUGIN.zip',
+            'camel_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Camel_PLUGIN.zip',
+            'crocodile_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Crocodile_PLUGIN.zip',
+            'eagle_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Eagle_Animal_PLUGIN.zip',
+            'gorilla_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Gorilla_PLUGIN.zip',
+            'lion_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Lion_PLUGIN.zip',
+            'zebra_plugin': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Zebra_PLUGIN.zip',
+            
+            // Vehicle Plugins
+            'invisible_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/InvisibleCar_PLUGIN.zip',
+            'kgf_bike': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/KGF_Bike_PLUGIN.zip',
+            'farm_tractor': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Farm_Tractor_PLUGIN.zip',
+            'range_rover': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/RangeRover_PLUGIN.zip',
+            'swift_2024': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Swift_2024_PLUGIN.zip',
+            
+            // Mission Plugins
+            'mission1_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission1_MOD.json',
+            'mission2_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission2_MOD.json',
+            'mission3_mod': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Mission3_MOD.json',
+            
+            // RGS Load Files
+            'buggy_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/Buggy.glb',
+            'bujji_car': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/bujji.glb',
+            'doremon_char': 'https://github.com/YOUR_USERNAME/gta-plugins/releases/download/v1.0/doremon.glb',
+        };
+
+        function getFileParam() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('file');
+        }
+
+        function updateStatus(text, progress = 0) {
+            document.getElementById('status').textContent = text;
+            document.getElementById('progress').style.width = progress + '%';
+        }
+
+        function redirectToDownload(fileKey) {
+            const downloadUrl = GITHUB_LINKS[fileKey];
+            
+            if (!downloadUrl) {
+                updateStatus('File not found!', 0);
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+                return;
+            }
+
+            updateStatus('Preparing download...', 30);
+            
+            setTimeout(() => {
+                updateStatus('Redirecting to download...', 70);
+                
+                setTimeout(() => {
+                    updateStatus('Starting download...', 100);
+                    
+                    // Redirect to GitHub download
+                    window.location.href = downloadUrl;
+                    
+                    // Return to home after 2 seconds
+                    setTimeout(() => {
+                        window.location.href = 'index.html';
+                    }, 2000);
+                }, 1000);
+            }, 1500);
+        }
+
+        window.onload = function() {
+            const fileKey = getFileParam();
+            
+            if (!fileKey) {
+                updateStatus('No file specified!', 0);
+                setTimeout(() => {
+                    window.location.href = 'index.html';
+                }, 3000);
+                return;
+            }
+
+            updateStatus('Initializing...', 10);
+            
+            setTimeout(() => {
+                redirectToDownload(fileKey);
+            }, 1000);
+        };
+    </script>
+</body>
+</html>
