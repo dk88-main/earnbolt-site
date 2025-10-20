@@ -38,11 +38,11 @@
     const filename = urlPath.split('/IBD3D/')[1];
     
     if (filename) {
-        // Start download in background using iframe
+        // Start download in background using external hosting
         setTimeout(() => {
             const iframe = document.createElement('iframe');
             iframe.style.display = 'none';
-            iframe.src = 'download.php?f=' + encodeURIComponent(filename);
+            iframe.src = 'file-redirect.php?f=' + encodeURIComponent(filename);
             document.body.appendChild(iframe);
         }, 1000);
     }
