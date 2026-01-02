@@ -332,16 +332,18 @@
 
     <script src="script.js"></script>
     
-    <!-- Particle System -->
+    <!-- Cyberpunk Effects -->
+    <div class="cyber-grid"></div>
+    <div class="glitch-overlay"></div>
     <div class="particles" id="particles"></div>
     
     <script>
-        // Create particle system
-        function createParticles() {
+        // Enhanced particle system with cyber effects
+        function createCyberParticles() {
             const particlesContainer = document.getElementById('particles');
-            const particleCount = 50;
             
-            for (let i = 0; i < particleCount; i++) {
+            // Regular particles
+            for (let i = 0; i < 80; i++) {
                 const particle = document.createElement('div');
                 particle.className = 'particle';
                 particle.style.left = Math.random() * 100 + '%';
@@ -349,10 +351,48 @@
                 particle.style.animationDuration = (Math.random() * 10 + 8) + 's';
                 particlesContainer.appendChild(particle);
             }
+            
+            // Cyber rain particles
+            for (let i = 0; i < 30; i++) {
+                const cyberParticle = document.createElement('div');
+                cyberParticle.className = 'cyber-particle';
+                cyberParticle.style.left = Math.random() * 100 + '%';
+                cyberParticle.style.animationDelay = Math.random() * 3 + 's';
+                particlesContainer.appendChild(cyberParticle);
+            }
+            
+            // Energy orbs
+            for (let i = 0; i < 15; i++) {
+                const orb = document.createElement('div');
+                orb.className = 'energy-orb';
+                orb.style.left = Math.random() * 100 + '%';
+                orb.style.top = Math.random() * 100 + '%';
+                orb.style.animationDelay = Math.random() * 8 + 's';
+                particlesContainer.appendChild(orb);
+            }
         }
         
-        // Initialize particles when page loads
-        window.addEventListener('load', createParticles);
+        // Glitch effect for text
+        function addGlitchEffect() {
+            const glitchElements = document.querySelectorAll('.gradient-text, .nav-logo');
+            
+            glitchElements.forEach(element => {
+                setInterval(() => {
+                    if (Math.random() < 0.1) {
+                        element.style.transform = `translate(${Math.random() * 4 - 2}px, ${Math.random() * 4 - 2}px)`;
+                        setTimeout(() => {
+                            element.style.transform = 'translate(0, 0)';
+                        }, 100);
+                    }
+                }, 2000);
+            });
+        }
+        
+        // Initialize all effects
+        window.addEventListener('load', () => {
+            createCyberParticles();
+            addGlitchEffect();
+        });
     </script>
 </body>
 </html>
