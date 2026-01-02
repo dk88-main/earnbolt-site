@@ -3,485 +3,139 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🔥 GAME BAZZI 🔥 - Ultimate Free Fire Arena | Earn Lakhs!</title>
+    <title>Game Bazzi - Free Fire Tournament Platform | Earn Real Money</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Matrix Rain Background -->
-    <div class="matrix-rain" id="matrixRain"></div>
-    
-    <!-- 3D Floating Particles -->
-    <div class="particle-system" id="particleSystem"></div>
-    
-    <!-- Lightning Effects -->
-    <div class="lightning-container">
-        <div class="lightning lightning-1"></div>
-        <div class="lightning lightning-2"></div>
-        <div class="lightning lightning-3"></div>
-    </div>
-    
-    <!-- Explosion Loader -->
-    <div class="explosion-loader" id="explosionLoader">
-        <div class="explosion-center">
-            <div class="game-logo">
-                <i class="fas fa-fire"></i>
-                <span class="logo-text">GAME BAZZI</span>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <div class="brand-logo">
+                    <i class="fas fa-fire"></i>
+                    <span>Game Bazzi</span>
+                </div>
             </div>
-            <div class="explosion-rings">
-                <div class="ring ring-1"></div>
-                <div class="ring ring-2"></div>
-                <div class="ring ring-3"></div>
+            
+            <ul class="nav-menu">
+                <li><a href="#home" class="nav-link active">Home</a></li>
+                <li><a href="#tournaments" class="nav-link">Tournaments</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#download" class="nav-link">Download</a></li>
+            </ul>
+            
+            <div class="nav-actions">
+                <button class="btn-outline">Login</button>
+                <button class="btn-primary">Sign Up</button>
             </div>
-            <div class="loading-text">LOADING ARENA...</div>
-        </div>
-    </div>
-
-    <!-- Navbar with Hologram Effect -->
-    <nav class="navbar-3d">
-        <div class="nav-hologram">
-            <div class="nav-content">
-                <div class="brand-3d">
-                    <div class="brand-cube">
-                        <div class="cube-face front"><i class="fas fa-gamepad"></i></div>
-                        <div class="cube-face back"><i class="fas fa-fire"></i></div>
-                        <div class="cube-face right"><i class="fas fa-trophy"></i></div>
-                        <div class="cube-face left"><i class="fas fa-bolt"></i></div>
-                        <div class="cube-face top"><i class="fas fa-star"></i></div>
-                        <div class="cube-face bottom"><i class="fas fa-gem"></i></div>
-                    </div>
-                    <span class="brand-name">GAME BAZZI</span>
-                </div>
-                
-                <div class="nav-links-3d">
-                    <a href="#home" class="nav-link-3d active">HOME</a>
-                    <a href="#arena" class="nav-link-3d">ARENA</a>
-                    <a href="#tournaments" class="nav-link-3d">BATTLES</a>
-                    <a href="#leaderboard" class="nav-link-3d">LEGENDS</a>
-                    <a href="#download" class="nav-link-3d">DOWNLOAD</a>
-                </div>
-                
-                <div class="nav-actions-3d">
-                    <button class="btn-3d login">LOGIN</button>
-                    <button class="btn-3d register">JOIN ARMY</button>
-                </div>
+            
+            <div class="mobile-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section with 3D Environment -->
-    <section id="home" class="hero-3d">
-        <div class="hero-environment">
-            <!-- 3D Battlefield -->
-            <div class="battlefield-3d">
-                <div class="ground-plane"></div>
-                <div class="mountains"></div>
-                <div class="city-skyline"></div>
-            </div>
-            
-            <!-- Floating Islands -->
-            <div class="floating-islands">
-                <div class="island island-1">
-                    <div class="island-glow"></div>
-                </div>
-                <div class="island island-2">
-                    <div class="island-glow"></div>
-                </div>
-                <div class="island island-3">
-                    <div class="island-glow"></div>
-                </div>
-            </div>
-            
-            <!-- Energy Portals -->
-            <div class="energy-portals">
-                <div class="portal portal-1">
-                    <div class="portal-ring"></div>
-                    <div class="portal-core"></div>
-                </div>
-                <div class="portal portal-2">
-                    <div class="portal-ring"></div>
-                    <div class="portal-core"></div>
-                </div>
-            </div>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg">
+            <div class="bg-gradient"></div>
+            <div class="bg-pattern"></div>
         </div>
         
-        <div class="hero-content-3d">
-            <div class="hero-left-3d">
-                <div class="title-explosion">
-                    <h1 class="hero-title-3d">
-                        <span class="title-word" data-text="DOMINATE">DOMINATE</span>
-                        <span class="title-word" data-text="FREE">FREE</span>
-                        <span class="title-word" data-text="FIRE">FIRE</span>
-                        <span class="title-word" data-text="ARENA">ARENA</span>
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-left">
+                    <div class="hero-badge">
+                        <i class="fas fa-trophy"></i>
+                        <span>India's #1 Gaming Platform</span>
+                    </div>
+                    
+                    <h1 class="hero-title">
+                        Play <span class="highlight">Free Fire</span><br>
+                        Win <span class="highlight">Real Money</span>
                     </h1>
-                </div>
-                
-                <div class="subtitle-hologram">
-                    <p>Enter the ultimate gaming dimension where legends are born and fortunes are made!</p>
-                </div>
-                
-                <!-- 3D Stats Cubes -->
-                <div class="stats-3d">
-                    <div class="stat-cube">
-                        <div class="cube-container">
-                            <div class="stat-face front">
-                                <div class="stat-number">5M+</div>
-                                <div class="stat-label">WARRIORS</div>
-                            </div>
-                            <div class="stat-face back">
-                                <div class="stat-icon"><i class="fas fa-users"></i></div>
-                            </div>
+                    
+                    <p class="hero-description">
+                        Join thousands of players in epic Free Fire tournaments. 
+                        100% secure platform with instant withdrawals and 24/7 support.
+                    </p>
+                    
+                    <div class="hero-stats">
+                        <div class="stat">
+                            <div class="stat-number">1M+</div>
+                            <div class="stat-label">Active Players</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">₹50Cr+</div>
+                            <div class="stat-label">Prize Pool</div>
+                        </div>
+                        <div class="stat">
+                            <div class="stat-number">500+</div>
+                            <div class="stat-label">Daily Tournaments</div>
                         </div>
                     </div>
                     
-                    <div class="stat-cube">
-                        <div class="cube-container">
-                            <div class="stat-face front">
-                                <div class="stat-number">₹50CR</div>
-                                <div class="stat-label">PRIZE POOL</div>
-                            </div>
-                            <div class="stat-face back">
-                                <div class="stat-icon"><i class="fas fa-coins"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="stat-cube">
-                        <div class="cube-container">
-                            <div class="stat-face front">
-                                <div class="stat-number">24/7</div>                                <div class="stat-label">BATTLES</div>
-                            </div>
-                            <div class="stat-face back">
-                                <div class="stat-icon"><i class="fas fa-fire"></i></div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Holographic Buttons -->
-                <div class="action-buttons-3d">
-                    <button class="mega-btn primary">
-                        <div class="btn-layers">
-                            <div class="btn-layer layer-1"></div>
-                            <div class="btn-layer layer-2"></div>
-                            <div class="btn-layer layer-3"></div>
-                        </div>
-                        <div class="btn-content">
-                            <i class="fas fa-rocket"></i>
-                            <span>ENTER ARENA</span>
-                        </div>
-                        <div class="btn-particles"></div>
-                    </button>
-                    
-                    <button class="mega-btn secondary">
-                        <div class="btn-layers">
-                            <div class="btn-layer layer-1"></div>
-                            <div class="btn-layer layer-2"></div>
-                        </div>
-                        <div class="btn-content">
+                    <div class="hero-actions">
+                        <button class="btn-hero primary">
+                            <i class="fas fa-download"></i>
+                            <span>Download App</span>
+                        </button>
+                        <button class="btn-hero secondary">
                             <i class="fas fa-play"></i>
-                            <span>WATCH EPIC BATTLES</span>
-                        </div>
-                    </button>
-                </div>
-            </div>
-            
-            <!-- 3D Phone Hologram -->
-            <div class="hero-right-3d">
-                <div class="phone-hologram">
-                    <div class="hologram-base"></div>
-                    <div class="phone-3d">
-                        <div class="phone-frame-3d">
-                            <div class="phone-screen-3d">
-                                <div class="app-interface-3d">
-                                    <!-- Live Battle Interface -->
-                                    <div class="battle-hud">
-                                        <div class="hud-top">
-                                            <div class="player-info">
-                                                <div class="avatar-3d"></div>
-                                                <div class="player-stats">
-                                                    <div class="name">FIRE_KING_YT</div>
-                                                    <div class="level">LEVEL 99</div>
-                                                </div>
-                                            </div>
-                                            <div class="coins-3d">
-                                                <i class="fas fa-coins"></i>
-                                                <span class="coin-count">₹2,45,000</span>
-                                            </div>
-                                        </div>
-                                        
-                                        <div class="battle-card-3d">
-                                            <div class="card-glow-effect"></div>
-                                            <div class="battle-status live">🔴 LIVE BATTLE</div>
-                                            <div class="battle-name">MEGA CHAMPIONSHIP</div>
-                                            <div class="prize-pool">₹10,00,000</div>
-                                            <div class="players-count">
-                                                <i class="fas fa-users"></i>
-                                                <span>8,547 / 10,000</span>
-                                            </div>
-                                            <button class="join-battle-btn">
-                                                <span>JOIN NOW</span>
-                                                <div class="btn-explosion"></div>
-                                            </button>
-                                        </div>
-                                        
-                                        <div class="quick-actions">
-                                            <div class="action-btn">
-                                                <i class="fas fa-trophy"></i>
-                                                <span>TOURNAMENTS</span>
-                                            </div>
-                                            <div class="action-btn">
-                                                <i class="fas fa-bolt"></i>
-                                                <span>QUICK MATCH</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="phone-glow-3d"></div>
-                    </div>
-                    
-                    <!-- Floating Rewards -->
-                    <div class="floating-rewards">
-                        <div class="reward-popup reward-1">
-                            <i class="fas fa-coins"></i>
-                            <span>+₹15,000</span>
-                        </div>
-                        <div class="reward-popup reward-2">
-                            <i class="fas fa-trophy"></i>
-                            <span>WINNER!</span>
-                        </div>
-                        <div class="reward-popup reward-3">
-                            <i class="fas fa-fire"></i>
-                            <span>KILLING SPREE!</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <!-- Scroll Portal -->
-        <div class="scroll-portal">
-            <div class="portal-rings">
-                <div class="portal-ring ring-1"></div>
-                <div class="portal-ring ring-2"></div>
-                <div class="portal-ring ring-3"></div>
-            </div>
-            <div class="scroll-text">ENTER THE ARENA</div>
-            <div class="scroll-arrow">
-                <i class="fas fa-chevron-down"></i>
-            </div>
-        </div>
-    </section>
-
-    <!-- Arena Section with 3D Tournament Cards -->
-    <section id="arena" class="arena-3d">
-        <div class="arena-environment">
-            <div class="arena-floor"></div>
-            <div class="arena-walls"></div>
-            <div class="arena-ceiling"></div>
-        </div>
-        
-        <div class="container-3d">
-            <div class="section-title-3d">
-                <h2 class="title-hologram">
-                    <span class="title-layer layer-1">LIVE BATTLES</span>
-                    <span class="title-layer layer-2">LIVE BATTLES</span>
-                    <span class="title-layer layer-3">LIVE BATTLES</span>
-                </h2>
-                <div class="title-effects">
-                    <div class="title-spark spark-1"></div>
-                    <div class="title-spark spark-2"></div>
-                    <div class="title-spark spark-3"></div>
-                </div>
-            </div>
-            
-            <!-- 3D Tournament Cards -->
-            <div class="tournaments-3d">
-                <div class="tournament-card-3d featured">
-                    <div class="card-3d-container">
-                        <div class="card-face front">
-                            <div class="card-header-3d">
-                                <div class="tournament-type">MEGA BATTLE</div>
-                                <div class="live-indicator">
-                                    <div class="pulse-dot"></div>
-                                    <span>LIVE NOW</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tournament-visual">
-                                <div class="battle-scene">
-                                    <div class="battlefield-mini"></div>
-                                    <div class="players-fighting">
-                                        <div class="player player-1"></div>
-                                        <div class="player player-2"></div>
-                                        <div class="explosion-effect"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="tournament-info-3d">
-                                <h3 class="tournament-name">FREE FIRE CHAMPIONSHIP</h3>
-                                <div class="prize-display">
-                                    <div class="prize-amount">₹25,00,000</div>
-                                    <div class="prize-coins">
-                                        <i class="fas fa-coins coin-1"></i>
-                                        <i class="fas fa-coins coin-2"></i>
-                                        <i class="fas fa-coins coin-3"></i>
-                                    </div>
-                                </div>
-                                
-                                <div class="battle-stats">
-                                    <div class="stat-item">
-                                        <i class="fas fa-users"></i>
-                                        <span>9,247 / 10,000</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span>2h 15m left</span>
-                                    </div>
-                                </div>
-                                
-                                <div class="progress-3d">
-                                    <div class="progress-track"></div>
-                                    <div class="progress-fill" style="width: 92%"></div>
-                                    <div class="progress-glow"></div>
-                                </div>
-                            </div>
-                            
-                            <button class="join-btn-3d">
-                                <div class="btn-bg-layers">
-                                    <div class="bg-layer layer-1"></div>
-                                    <div class="bg-layer layer-2"></div>
-                                </div>
-                                <div class="btn-text">
-                                    <i class="fas fa-sword"></i>
-                                    <span>JOIN BATTLE</span>
-                                </div>
-                                <div class="btn-energy"></div>
-                            </button>
-                        </div>
-                        
-                        <div class="card-face back">
-                            <div class="card-back-content">
-                                <div class="battle-preview">
-                                    <h4>BATTLE PREVIEW</h4>
-                                    <div class="map-preview">
-                                        <div class="map-terrain"></div>
-                                        <div class="safe-zone"></div>
-                                        <div class="player-markers">
-                                            <div class="marker marker-1"></div>
-                                            <div class="marker marker-2"></div>
-                                            <div class="marker marker-3"></div>
-                                        </div>
-                                    </div>
-                                    <div class="battle-rules">
-                                        <div class="rule">🏆 Winner takes 40%</div>
-                                        <div class="rule">🥈 Runner-up gets 25%</div>
-                                        <div class="rule">🥉 Third place gets 15%</div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card-glow-3d"></div>
-                </div>
-                
-                <div class="tournament-card-3d">
-                    <div class="card-3d-container">
-                        <div class="card-face front">
-                            <div class="card-header-3d">
-                                <div class="tournament-type">SQUAD BATTLE</div>
-                                <div class="live-indicator upcoming">
-                                    <span>STARTING SOON</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tournament-visual">
-                                <div class="battle-scene squad">
-                                    <div class="squad-formation">
-                                        <div class="squad-member member-1"></div>
-                                        <div class="squad-member member-2"></div>
-                                        <div class="squad-member member-3"></div>
-                                        <div class="squad-member member-4"></div>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="tournament-info-3d">
-                                <h3 class="tournament-name">SQUAD SHOWDOWN</h3>
-                                <div class="prize-display">
-                                    <div class="prize-amount">₹15,00,000</div>
-                                </div>
-                                
-                                <div class="battle-stats">
-                                    <div class="stat-item">
-                                        <i class="fas fa-users"></i>
-                                        <span>1,200 / 2,000 Teams</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="fas fa-calendar"></i>
-                                        <span>Starts in 45m</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button class="join-btn-3d">
-                                <div class="btn-text">
-                                    <i class="fas fa-users"></i>
-                                    <span>FORM SQUAD</span>
-                                </div>
-                            </button>
-                        </div>
+                            <span>Watch Demo</span>
+                        </button>
                     </div>
                 </div>
                 
-                <div class="tournament-card-3d">
-                    <div class="card-3d-container">
-                        <div class="card-face front">
-                            <div class="card-header-3d">
-                                <div class="tournament-type">SOLO RANKED</div>
-                                <div class="live-indicator">
-                                    <div class="pulse-dot"></div>
-                                    <span>LIVE NOW</span>
-                                </div>
-                            </div>
-                            
-                            <div class="tournament-visual">
-                                <div class="battle-scene solo">
-                                    <div class="solo-player">
-                                        <div class="player-avatar"></div>
-                                        <div class="skill-aura"></div>
+                <div class="hero-right">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
+                            <div class="phone-screen">
+                                <div class="app-ui">
+                                    <div class="app-header">
+                                        <div class="app-logo">
+                                            <i class="fas fa-gamepad"></i>
+                                            <span>Game Bazzi</span>
+                                        </div>
+                                        <div class="user-balance">
+                                            <i class="fas fa-coins"></i>
+                                            <span>₹25,000</span>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="tournament-card">
+                                        <div class="tournament-header">
+                                            <span class="live-badge">🔴 LIVE</span>
+                                            <span class="prize">₹1,00,000</span>
+                                        </div>
+                                        <h4>Free Fire Championship</h4>
+                                        <div class="players">
+                                            <i class="fas fa-users"></i>
+                                            <span>8,547 / 10,000 Players</span>
+                                        </div>
+                                        <button class="join-btn">JOIN TOURNAMENT</button>
+                                    </div>
+                                    
+                                    <div class="quick-actions">
+                                        <div class="action">
+                                            <i class="fas fa-trophy"></i>
+                                            <span>Tournaments</span>
+                                        </div>
+                                        <div class="action">
+                                            <i class="fas fa-bolt"></i>
+                                            <span>Quick Match</span>
+                                        </div>
+                                        <div class="action">
+                                            <i class="fas fa-wallet"></i>
+                                            <span>Wallet</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                            
-                            <div class="tournament-info-3d">
-                                <h3 class="tournament-name">LEGENDS ONLY</h3>
-                                <div class="prize-display">
-                                    <div class="prize-amount">₹8,00,000</div>
-                                </div>
-                                
-                                <div class="battle-stats">
-                                    <div class="stat-item">
-                                        <i class="fas fa-user"></i>
-                                        <span>890 / 1,000</span>
-                                    </div>
-                                    <div class="stat-item">
-                                        <i class="fas fa-clock"></i>
-                                        <span>1h 30m left</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <button class="join-btn-3d">
-                                <div class="btn-text">
-                                    <i class="fas fa-crown"></i>
-                                    <span>PROVE YOURSELF</span>
-                                </div>
-                            </button>
                         </div>
                     </div>
                 </div>
@@ -489,127 +143,351 @@
         </div>
     </section>
 
-    <!-- Download Section with Holographic Interface -->
-    <section id="download" class="download-3d">
-        <div class="download-environment">
-            <div class="hologram-projectors">
-                <div class="projector projector-1"></div>
-                <div class="projector projector-2"></div>
-                <div class="projector projector-3"></div>
+    <!-- Tournaments Section -->
+    <section id="tournaments" class="tournaments">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Live Tournaments</h2>
+                <p class="section-subtitle">Join epic battles and win amazing prizes</p>
             </div>
-        </div>
-        
-        <div class="container-3d">
-            <div class="download-content-3d">
-                <div class="download-left-3d">
-                    <div class="section-title-3d">
-                        <h2 class="title-hologram">
-                            <span class="title-layer">DOWNLOAD</span>
-                            <span class="title-layer">GAME BAZZI</span>
-                        </h2>
+            
+            <div class="tournaments-grid">
+                <div class="tournament-item featured">
+                    <div class="tournament-badge">FEATURED</div>
+                    <div class="tournament-status live">
+                        <div class="status-dot"></div>
+                        <span>LIVE NOW</span>
                     </div>
                     
-                    <div class="download-description">
-                        <p>Enter the ultimate gaming dimension and start your journey to become a legend!</p>
-                    </div>
-                    
-                    <div class="download-features-3d">
-                        <div class="feature-3d">
-                            <div class="feature-icon-3d">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <span>100% Secure Platform</span>
-                        </div>
-                        <div class="feature-3d">
-                            <div class="feature-icon-3d">
-                                <i class="fas fa-bolt"></i>
-                            </div>
-                            <span>Instant Withdrawals</span>
-                        </div>
-                        <div class="feature-3d">
-                            <div class="feature-icon-3d">
-                                <i class="fas fa-headset"></i>
-                            </div>
-                            <span>24/7 Support</span>
-                        </div>
-                    </div>
-                    
-                    <div class="download-buttons-3d">
-                        <button class="download-btn-3d android">
-                            <div class="btn-hologram">
-                                <div class="btn-icon">
-                                    <i class="fab fa-android"></i>
-                                </div>
-                                <div class="btn-info">
-                                    <span class="btn-label">Download for</span>
-                                    <span class="btn-platform">Android</span>
-                                </div>
-                            </div>
-                            <div class="btn-energy-field"></div>
-                        </button>
+                    <div class="tournament-info">
+                        <h3>Free Fire Championship</h3>
+                        <div class="prize-pool">₹25,00,000</div>
                         
-                        <button class="download-btn-3d ios">
-                            <div class="btn-hologram">
-                                <div class="btn-icon">
-                                    <i class="fab fa-apple"></i>
-                                </div>
-                                <div class="btn-info">
-                                    <span class="btn-label">Download for</span>
-                                    <span class="btn-platform">iOS</span>
-                                </div>
+                        <div class="tournament-details">
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>9,247 / 10,000 Players</span>
                             </div>
-                            <div class="btn-energy-field"></div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>2h 15m remaining</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-map"></i>
+                                <span>Bermuda Remastered</span>
+                            </div>
+                        </div>
+                        
+                        <div class="progress-bar">
+                            <div class="progress" style="width: 92%"></div>
+                        </div>
+                        
+                        <button class="tournament-btn">
+                            <i class="fas fa-bolt"></i>
+                            <span>JOIN NOW</span>
                         </button>
                     </div>
                 </div>
                 
-                <div class="download-right-3d">
-                    <div class="app-showcase-3d">
-                        <div class="showcase-base"></div>
-                        <div class="phone-hologram-large">
-                            <div class="phone-3d-large">
-                                <div class="phone-frame-large">
-                                    <div class="phone-screen-large">
-                                        <div class="app-demo">
-                                            <div class="demo-header">
-                                                <div class="demo-time">9:41</div>
-                                                <div class="demo-battery">100%</div>
+                <div class="tournament-item">
+                    <div class="tournament-status upcoming">
+                        <span>STARTING SOON</span>
+                    </div>
+                    
+                    <div class="tournament-info">
+                        <h3>Squad Showdown</h3>
+                        <div class="prize-pool">₹15,00,000</div>
+                        
+                        <div class="tournament-details">
+                            <div class="detail">
+                                <i class="fas fa-users"></i>
+                                <span>1,200 / 2,000 Teams</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-calendar"></i>
+                                <span>Starts in 45 min</span>
+                            </div>
+                        </div>
+                        
+                        <button class="tournament-btn">
+                            <i class="fas fa-user-plus"></i>
+                            <span>REGISTER TEAM</span>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="tournament-item">
+                    <div class="tournament-status live">
+                        <div class="status-dot"></div>
+                        <span>LIVE NOW</span>
+                    </div>
+                    
+                    <div class="tournament-info">
+                        <h3>Solo Legends</h3>
+                        <div class="prize-pool">₹8,00,000</div>
+                        
+                        <div class="tournament-details">
+                            <div class="detail">
+                                <i class="fas fa-user"></i>
+                                <span>890 / 1,000 Players</span>
+                            </div>
+                            <div class="detail">
+                                <i class="fas fa-clock"></i>
+                                <span>1h 30m remaining</span>
+                            </div>
+                        </div>
+                        
+                        <button class="tournament-btn">
+                            <i class="fas fa-crown"></i>
+                            <span>JOIN BATTLE</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Why Choose Game Bazzi?</h2>
+                <p class="section-subtitle">Experience the best gaming platform with unmatched features</p>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-check"></i>
+                    </div>
+                    <h3>100% Secure</h3>
+                    <p>Bank-level security with encrypted transactions and verified payouts</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Instant Withdrawal</h3>
+                    <p>Withdraw your winnings instantly to your bank account or UPI</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Daily Tournaments</h3>
+                    <p>500+ tournaments daily with prizes ranging from ₹100 to ₹10 Lakhs</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer support via chat, call, and email</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Active Community</h3>
+                    <p>Join 1M+ active gamers and connect with pro players</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Easy to Use</h3>
+                    <p>Intuitive app design with seamless tournament registration</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Download Section -->
+    <section id="download" class="download">
+        <div class="container">
+            <div class="download-content">
+                <div class="download-left">
+                    <h2 class="download-title">Download Game Bazzi App</h2>
+                    <p class="download-description">
+                        Get the ultimate Free Fire tournament experience on your mobile device. 
+                        Start earning money by playing your favorite game!
+                    </p>
+                    
+                    <div class="download-features">
+                        <div class="download-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Easy tournament registration</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Real-time match updates</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Instant prize withdrawal</span>
+                        </div>
+                        <div class="download-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Live chat support</span>
+                        </div>
+                    </div>
+                    
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn android">
+                            <div class="btn-icon">
+                                <i class="fab fa-google-play"></i>
+                            </div>
+                            <div class="btn-text">
+                                <span>Get it on</span>
+                                <strong>Google Play</strong>
+                            </div>
+                        </a>
+                        
+                        <a href="#" class="download-btn ios">
+                            <div class="btn-icon">
+                                <i class="fab fa-apple"></i>
+                            </div>
+                            <div class="btn-text">
+                                <span>Download on the</span>
+                                <strong>App Store</strong>
+                            </div>
+                        </a>
+                    </div>
+                    
+                    <div class="download-stats">
+                        <div class="download-stat">
+                            <span class="stat-number">1M+</span>
+                            <span class="stat-label">Downloads</span>
+                        </div>
+                        <div class="download-stat">
+                            <span class="stat-number">4.8★</span>
+                            <span class="stat-label">Rating</span>
+                        </div>
+                        <div class="download-stat">
+                            <span class="stat-number">50K+</span>
+                            <span class="stat-label">Reviews</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="download-right">
+                    <div class="app-preview">
+                        <div class="preview-phone">
+                            <div class="preview-screen">
+                                <div class="preview-content">
+                                    <div class="preview-header">
+                                        <span class="time">9:41</span>
+                                        <span class="battery">100%</span>
+                                    </div>
+                                    
+                                    <div class="preview-app">
+                                        <div class="app-nav">
+                                            <div class="app-title">
+                                                <i class="fas fa-gamepad"></i>
+                                                <span>Game Bazzi</span>
                                             </div>
-                                            <div class="demo-content">
-                                                <div class="app-logo-demo">
-                                                    <i class="fas fa-gamepad"></i>
-                                                    <span>GAME BAZZI</span>
-                                                </div>
-                                                <div class="demo-stats">
-                                                    <div class="demo-stat">
-                                                        <span class="stat-value">₹2,45,000</span>
-                                                        <span class="stat-label">Total Earnings</span>
-                                                    </div>
-                                                    <div class="demo-stat">
-                                                        <span class="stat-value">156</span>
-                                                        <span class="stat-label">Battles Won</span>
-                                                    </div>
-                                                </div>
-                                                <div class="demo-tournament">
-                                                    <div class="tournament-mini">
-                                                        <div class="tournament-status">🔴 LIVE</div>
-                                                        <div class="tournament-name">Championship</div>
-                                                        <div class="tournament-prize">₹50,000</div>
-                                                        <button class="demo-join-btn">JOIN</button>
-                                                    </div>
-                                                </div>
+                                            <div class="app-balance">₹15,000</div>
+                                        </div>
+                                        
+                                        <div class="preview-tournament">
+                                            <div class="preview-badge">LIVE</div>
+                                            <div class="preview-name">Championship</div>
+                                            <div class="preview-prize">₹50,000</div>
+                                            <button class="preview-join">JOIN</button>
+                                        </div>
+                                        
+                                        <div class="preview-stats">
+                                            <div class="preview-stat">
+                                                <span>156</span>
+                                                <small>Wins</small>
+                                            </div>
+                                            <div class="preview-stat">
+                                                <span>₹2.4L</span>
+                                                <small>Earned</small>
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="hologram-glow"></div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <i class="fas fa-fire"></i>
+                        <span>Game Bazzi</span>
+                    </div>
+                    <p>India's most trusted gaming tournament platform. Join millions of players and start earning money by playing Free Fire!</p>
+                    
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#tournaments">Tournaments</a></li>
+                            <li><a href="#features">Features</a></li>
+                            <li><a href="#download">Download</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Support</h4>
+                        <ul>
+                            <li><a href="#">Help Center</a></li>
+                            <li><a href="#">Contact Us</a></li>
+                            <li><a href="#">Live Chat</a></li>
+                            <li><a href="#">Report Issue</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <ul>
+                            <li><a href="#">Terms of Service</a></li>
+                            <li><a href="#">Privacy Policy</a></li>
+                            <li><a href="#">Refund Policy</a></li>
+                            <li><a href="#">Fair Play</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2024 Game Bazzi. All rights reserved.</p>
+                <div class="footer-badges">
+                    <span class="badge">
+                        <i class="fas fa-shield-check"></i>
+                        100% Secure
+                    </span>
+                    <span class="badge">
+                        <i class="fas fa-certificate"></i>
+                        Verified Platform
+                    </span>
+                </div>
+            </div>
+        </div>
+    </footer>
 
     <script src="script.js"></script>
 </body>
