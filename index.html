@@ -1,114 +1,138 @@
 <!DOCTYPE html>
-<html lang="hi">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Bazzi - India's #1 Real Money Gaming App</title>
-    <meta name="description" content="Play games and earn real money! Join millions of players on Game Bazzi - India's most trusted gaming platform.">
+    <title>Game Bazzi - Real Money Gaming Platform</title>
+    <meta name="description" content="Play skill-based games and win real money. India's most trusted gaming platform with instant withdrawals.">
     <link rel="stylesheet" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <div class="particles"></div>
-    
     <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">
-                <span class="logo-icon">🎮</span>
-                <span class="logo-text">Game Bazzi</span>
-            </div>
-            <div class="nav-links">
-                <a href="#home">Home</a>
-                <a href="#games">Games</a>
-                <a href="#features">Features</a>
-                <a href="#download">Download</a>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
+    <header class="header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='40' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E" alt="Game Bazzi" class="logo-img">
+                    <span class="logo-text">Game Bazzi</span>
+                </div>
+                <ul class="nav-menu">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#games">Games</a></li>
+                    <li><a href="#how-to-play">How to Play</a></li>
+                    <li><a href="#download">Download</a></li>
+                </ul>
+                <div class="nav-buttons">
+                    <button class="btn-login">Login</button>
+                    <button class="btn-signup">Sign Up</button>
+                </div>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </div>
         </nav>
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section">
-        <div class="container">
+    <section id="home" class="hero">
+        <div class="hero-container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <div class="badge">🏆 India's #1 Gaming App</div>
-                    <h1>Game Bazzi</h1>
-                    <h2>खेलो, जीतो, कमाओ!</h2>
-                    <p>हर गेम में जीत का मौका। रोज़ाना हज़ारों रुपए जीतने का अवसर! 100% Safe & Secure Platform</p>
-                    
-                    <div class="stats">
-                        <div class="stat">
-                            <span class="stat-number">10L+</span>
-                            <span class="stat-label">Active Players</span>
+                    <div class="hero-badge">
+                        <i class="fas fa-trophy"></i>
+                        India's #1 Real Money Gaming Platform
+                    </div>
+                    <h1 class="hero-title">
+                        Play Games,
+                        <span class="gradient-text">Win Real Money</span>
+                    </h1>
+                    <p class="hero-description">
+                        Join millions of players in skill-based games. Win cash prizes, 
+                        participate in tournaments, and withdraw instantly to your bank account.
+                    </p>
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <div class="stat-number">10M+</div>
+                            <div class="stat-label">Players</div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">₹50Cr+</span>
-                            <span class="stat-label">Winnings Paid</span>
+                        <div class="stat-item">
+                            <div class="stat-number">₹100Cr+</div>
+                            <div class="stat-label">Winnings Paid</div>
                         </div>
-                        <div class="stat">
-                            <span class="stat-number">4.8★</span>
-                            <span class="stat-label">App Rating</span>
+                        <div class="stat-item">
+                            <div class="stat-number">4.8★</div>
+                            <div class="stat-label">App Rating</div>
                         </div>
                     </div>
-
-                    <div class="cta-section">
-                        <h3>🎁 अभी डाउनलोड करें और ₹100 बोनस पाएं!</h3>
-                        <div class="download-buttons">
-                            <a href="#" class="download-btn primary">
-                                <div class="btn-content">
-                                    <span class="btn-icon">📱</span>
-                                    <div class="btn-text">
-                                        <span class="btn-title">Download APK</span>
-                                        <span class="btn-subtitle">Direct Download</span>
-                                    </div>
-                                </div>
-                            </a>
-                            <a href="#" class="download-btn secondary">
-                                <div class="btn-content">
-                                    <span class="btn-icon">🏪</span>
-                                    <div class="btn-text">
-                                        <span class="btn-title">Play Store</span>
-                                        <span class="btn-subtitle">Official Store</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>
+                    <div class="hero-cta">
+                        <button class="btn-primary">
+                            <i class="fas fa-download"></i>
+                            Download Now
+                        </button>
+                        <button class="btn-secondary">
+                            <i class="fas fa-play"></i>
+                            Watch Demo
+                        </button>
                     </div>
                 </div>
-
                 <div class="hero-visual">
-                    <div class="phone-container">
-                        <div class="phone">
+                    <div class="phone-mockup">
+                        <div class="phone-frame">
                             <div class="phone-screen">
-                                <div class="app-interface">
+                                <div class="app-ui">
                                     <div class="app-header">
-                                        <span class="app-logo">🎮</span>
-                                        <span class="app-name">Game Bazzi</span>
-                                        <span class="balance">₹2,450</span>
+                                        <div class="user-info">
+                                            <div class="avatar"></div>
+                                            <div class="user-details">
+                                                <div class="username">Player123</div>
+                                                <div class="level">Level 15</div>
+                                            </div>
+                                        </div>
+                                        <div class="wallet">
+                                            <i class="fas fa-wallet"></i>
+                                            <span>₹2,450</span>
+                                        </div>
                                     </div>
-                                    <div class="game-grid">
-                                        <div class="game-card active">🎯</div>
-                                        <div class="game-card">🃏</div>
-                                        <div class="game-card">🎲</div>
-                                        <div class="game-card">🏏</div>
+                                    <div class="game-categories">
+                                        <div class="category active">All Games</div>
+                                        <div class="category">Card Games</div>
+                                        <div class="category">Casual</div>
                                     </div>
-                                    <div class="play-button">PLAY NOW</div>
+                                    <div class="games-grid">
+                                        <div class="game-tile">
+                                            <div class="game-icon">🎯</div>
+                                            <div class="game-name">Target</div>
+                                            <div class="game-prize">₹5K</div>
+                                        </div>
+                                        <div class="game-tile">
+                                            <div class="game-icon">🃏</div>
+                                            <div class="game-name">Rummy</div>
+                                            <div class="game-prize">₹10K</div>
+                                        </div>
+                                        <div class="game-tile">
+                                            <div class="game-icon">🎲</div>
+                                            <div class="game-name">Ludo</div>
+                                            <div class="game-prize">₹2K</div>
+                                        </div>
+                                        <div class="game-tile">
+                                            <div class="game-icon">🏏</div>
+                                            <div class="game-name">Cricket</div>
+                                            <div class="game-prize">₹15K</div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="floating-elements">
-                            <div class="coin">₹</div>
-                            <div class="coin">₹</div>
-                            <div class="coin">₹</div>
-                            <div class="trophy">🏆</div>
-                            <div class="gem">💎</div>
-                        </div>
+                    </div>
+                    <div class="floating-elements">
+                        <div class="coin coin-1">₹</div>
+                        <div class="coin coin-2">₹</div>
+                        <div class="coin coin-3">₹</div>
+                        <div class="trophy">🏆</div>
                     </div>
                 </div>
             </div>
@@ -118,94 +142,107 @@
     <!-- Games Section -->
     <section id="games" class="games-section">
         <div class="container">
-            <h2 class="section-title">🎮 Popular Games</h2>
-            <div class="games-grid">
-                <div class="game-item">
-                    <div class="game-icon">🎯</div>
-                    <h3>Target Master</h3>
-                    <p>Test your aim and win big!</p>
-                    <div class="prize">Win up to ₹10,000</div>
+            <div class="section-header">
+                <h2 class="section-title">Popular Games</h2>
+                <p class="section-subtitle">Choose from our collection of skill-based games</p>
+            </div>
+            <div class="games-container">
+                <div class="game-card">
+                    <div class="game-image">
+                        <div class="game-icon-large">🎯</div>
+                        <div class="game-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Target Master</h3>
+                        <p class="game-desc">Test your precision and aim</p>
+                        <div class="game-meta">
+                            <span class="prize-pool">Prize Pool: ₹50,000</span>
+                            <span class="players">1.2K+ Playing</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="game-item">
-                    <div class="game-icon">🃏</div>
-                    <h3>Card Battle</h3>
-                    <p>Strategic card game</p>
-                    <div class="prize">Win up to ₹25,000</div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <div class="game-icon-large">🃏</div>
+                        <div class="game-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Rummy Pro</h3>
+                        <p class="game-desc">Classic card game with strategy</p>
+                        <div class="game-meta">
+                            <span class="prize-pool">Prize Pool: ₹1,00,000</span>
+                            <span class="players">5K+ Playing</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="game-item">
-                    <div class="game-icon">🎲</div>
-                    <h3>Lucky Dice</h3>
-                    <p>Roll your way to victory</p>
-                    <div class="prize">Win up to ₹5,000</div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <div class="game-icon-large">🎲</div>
+                        <div class="game-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Ludo King</h3>
+                        <p class="game-desc">Classic board game fun</p>
+                        <div class="game-meta">
+                            <span class="prize-pool">Prize Pool: ₹25,000</span>
+                            <span class="players">3K+ Playing</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="game-item">
-                    <div class="game-icon">🏏</div>
-                    <h3>Cricket Quiz</h3>
-                    <p>Test your cricket knowledge</p>
-                    <div class="prize">Win up to ₹15,000</div>
+                <div class="game-card">
+                    <div class="game-image">
+                        <div class="game-icon-large">🏏</div>
+                        <div class="game-overlay">
+                            <button class="play-btn">Play Now</button>
+                        </div>
+                    </div>
+                    <div class="game-info">
+                        <h3 class="game-title">Cricket Quiz</h3>
+                        <p class="game-desc">Test your cricket knowledge</p>
+                        <div class="game-meta">
+                            <span class="prize-pool">Prize Pool: ₹75,000</span>
+                            <span class="players">2K+ Playing</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="features-section">
+    <!-- How to Play Section -->
+    <section id="how-to-play" class="how-to-play">
         <div class="container">
-            <h2 class="section-title">⚡ Why Choose Game Bazzi?</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">💰</div>
-                    <h3>Real Money Rewards</h3>
-                    <p>Win actual cash prizes that you can withdraw instantly to your bank account</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔒</div>
-                    <h3>100% Safe & Secure</h3>
-                    <p>Bank-level security with SSL encryption. Your money and data are completely safe</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⚡</div>
-                    <h3>Instant Withdrawal</h3>
-                    <p>Withdraw your winnings instantly to UPI, Paytm, or bank account within minutes</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🎮</div>
-                    <h3>Multiple Games</h3>
-                    <p>Choose from 20+ exciting games. New games added every week!</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🏆</div>
-                    <h3>Daily Tournaments</h3>
-                    <p>Participate in daily tournaments with mega prize pools up to ₹1 Lakh</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📞</div>
-                    <h3>24/7 Support</h3>
-                    <p>Round-the-clock customer support in Hindi and English via chat and call</p>
-                </div>
+            <div class="section-header">
+                <h2 class="section-title">How to Play & Win</h2>
+                <p class="section-subtitle">Start your winning journey in 3 simple steps</p>
             </div>
-        </div>
-    </section>
-
-    <!-- Testimonials -->
-    <section class="testimonials-section">
-        <div class="container">
-            <h2 class="section-title">💬 What Players Say</h2>
-            <div class="testimonials-grid">
-                <div class="testimonial">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Game Bazzi se maine 2 mahine mein ₹45,000 kamaye hain! Bilkul genuine app hai."</p>
-                    <div class="author">- Rahul Kumar, Delhi</div>
+            <div class="steps-container">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Download & Register</h3>
+                        <p>Download the app and create your account in seconds. Get ₹100 bonus on signup!</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Instant withdrawal ka feature bahut accha hai. Paisa turant account mein aa jata hai."</p>
-                    <div class="author">- Priya Sharma, Mumbai</div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Choose Your Game</h3>
+                        <p>Select from 20+ skill-based games. Join tournaments or play practice matches.</p>
+                    </div>
                 </div>
-                <div class="testimonial">
-                    <div class="stars">⭐⭐⭐⭐⭐</div>
-                    <p>"Daily tournaments mein participate karta hun. Last week ₹15,000 jeeta!"</p>
-                    <div class="author">- Amit Singh, Bangalore</div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Win & Withdraw</h3>
+                        <p>Win real money and withdraw instantly to your bank account or UPI.</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -215,58 +252,85 @@
     <section id="download" class="download-section">
         <div class="container">
             <div class="download-content">
-                <h2>🚀 Ready to Start Earning?</h2>
-                <p>Join 10 Lakh+ players and start your winning journey today!</p>
-                <div class="bonus-offer">
-                    <span class="offer-text">🎁 Special Offer: Get ₹100 Bonus + 50 Free Games</span>
-                </div>
-                <div class="download-buttons">
-                    <a href="#" class="download-btn primary large">
-                        <div class="btn-content">
-                            <span class="btn-icon">📱</span>
-                            <div class="btn-text">
-                                <span class="btn-title">Download APK</span>
-                                <span class="btn-subtitle">Direct Download • 15MB</span>
-                            </div>
+                <div class="download-text">
+                    <h2>Ready to Start Winning?</h2>
+                    <p>Join 10 million+ players and start your earning journey today!</p>
+                    <div class="download-features">
+                        <div class="feature">
+                            <i class="fas fa-shield-alt"></i>
+                            <span>100% Safe & Secure</span>
                         </div>
-                    </a>
-                    <a href="#" class="download-btn secondary large">
-                        <div class="btn-content">
-                            <span class="btn-icon">🏪</span>
-                            <div class="btn-text">
-                                <span class="btn-title">Play Store</span>
-                                <span class="btn-subtitle">Official Store • Safe</span>
-                            </div>
+                        <div class="feature">
+                            <i class="fas fa-bolt"></i>
+                            <span>Instant Withdrawals</span>
                         </div>
-                    </a>
+                        <div class="feature">
+                            <i class="fas fa-trophy"></i>
+                            <span>Daily Tournaments</span>
+                        </div>
+                    </div>
+                    <div class="download-buttons">
+                        <a href="#" class="download-btn android">
+                            <i class="fab fa-android"></i>
+                            <div class="btn-text">
+                                <span class="btn-label">Download for</span>
+                                <span class="btn-platform">Android</span>
+                            </div>
+                        </a>
+                        <a href="#" class="download-btn ios">
+                            <i class="fab fa-apple"></i>
+                            <div class="btn-text">
+                                <span class="btn-label">Download for</span>
+                                <span class="btn-platform">iOS</span>
+                            </div>
+                        </a>
+                    </div>
                 </div>
-                <div class="trust-badges">
-                    <span class="badge-item">🔒 SSL Secured</span>
-                    <span class="badge-item">✅ RNG Certified</span>
-                    <span class="badge-item">🏆 Award Winning</span>
+                <div class="download-visual">
+                    <div class="qr-code">
+                        <div class="qr-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                            <p>Scan QR Code to Download</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <div class="footer-logo">
-                        <span class="logo-icon">🎮</span>
-                        <span class="logo-text">Game Bazzi</span>
+                        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%23ff6b35'/%3E%3Ctext x='50' y='60' text-anchor='middle' fill='white' font-size='40' font-weight='bold'%3EG%3C/text%3E%3C/svg%3E" alt="Game Bazzi">
+                        <span>Game Bazzi</span>
                     </div>
                     <p>India's most trusted real money gaming platform. Play responsibly and win big!</p>
+                    <div class="social-links">
+                        <a href="#"><i class="fab fa-facebook"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>Games</h4>
                     <ul>
-                        <li><a href="#">About Us</a></li>
-                        <li><a href="#">How to Play</a></li>
-                        <li><a href="#">Winners</a></li>
-                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Rummy</a></li>
+                        <li><a href="#">Ludo</a></li>
+                        <li><a href="#">Cricket Quiz</a></li>
+                        <li><a href="#">Target Master</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Live Chat</a></li>
+                        <li><a href="#">FAQ</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
@@ -276,14 +340,6 @@
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Responsible Gaming</a></li>
                         <li><a href="#">Fair Play</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Contact</h4>
-                    <ul>
-                        <li>📧 support@gamebazzi.com</li>
-                        <li>📞 +91-9876543210</li>
-                        <li>💬 Live Chat 24/7</li>
                     </ul>
                 </div>
             </div>
