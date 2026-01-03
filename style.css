@@ -13,26 +13,27 @@
     --success: #27AE60;
     --warning: #F39C12;
     --danger: #E74C3C;
-    --dark: #1A1A1A;
+    --dark: #0F0F0F;
+    --darker: #0A0A0A;
     --light: #FFFFFF;
-    --gray-100: #F8F9FA;
-    --gray-200: #E9ECEF;
-    --gray-300: #DEE2E6;
-    --gray-400: #CED4DA;
-    --gray-500: #ADB5BD;
-    --gray-600: #6C757D;
-    --gray-700: #495057;
-    --gray-800: #343A40;
-    --gray-900: #212529;
+    --gray-100: #1A1A1A;
+    --gray-200: #2A2A2A;
+    --gray-300: #3A3A3A;
+    --gray-400: #4A4A4A;
+    --gray-500: #6A6A6A;
+    --gray-600: #8A8A8A;
+    --gray-700: #AAAAAA;
+    --gray-800: #CCCCCC;
+    --gray-900: #FFFFFF;
     
     --gradient-primary: linear-gradient(135deg, #FF6B35 0%, #F7931E 100%);
     --gradient-secondary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-    --gradient-dark: linear-gradient(135deg, #2C3E50 0%, #34495E 100%);
+    --gradient-dark: linear-gradient(135deg, #1A1A1A 0%, #2A2A2A 100%);
     
-    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.1);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.15);
-    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.2);
-    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.25);
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.3);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.4);
+    --shadow-lg: 0 8px 25px rgba(0, 0, 0, 0.5);
+    --shadow-xl: 0 20px 40px rgba(0, 0, 0, 0.6);
     
     --border-radius: 12px;
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -46,7 +47,7 @@ body {
     font-family: 'Inter', sans-serif;
     line-height: 1.6;
     color: var(--gray-800);
-    background: var(--light);
+    background: var(--dark);
     overflow-x: hidden;
 }
 
@@ -61,7 +62,7 @@ body {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(255, 255, 255, 0.95);
+    background: rgba(15, 15, 15, 0.95);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--gray-200);
     z-index: 1000;
@@ -69,7 +70,7 @@ body {
 }
 
 .navbar.scrolled {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(10, 10, 10, 0.98);
     box-shadow: var(--shadow-md);
 }
 
@@ -200,7 +201,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(255, 107, 53, 0.1) 0%, rgba(52, 152, 219, 0.1) 100%);
+    background: linear-gradient(135deg, rgba(255, 107, 53, 0.15) 0%, rgba(52, 152, 219, 0.15) 100%);
 }
 
 .bg-pattern {
@@ -209,8 +210,8 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.1) 0%, transparent 50%),
-                      radial-gradient(circle at 75% 75%, rgba(52, 152, 219, 0.1) 0%, transparent 50%);
+    background-image: radial-gradient(circle at 25% 25%, rgba(255, 107, 53, 0.2) 0%, transparent 50%),
+                      radial-gradient(circle at 75% 75%, rgba(52, 152, 219, 0.2) 0%, transparent 50%);
 }
 
 .hero-content {
@@ -335,11 +336,12 @@ body {
 .phone-frame {
     width: 280px;
     height: 560px;
-    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     border-radius: 35px;
     padding: 15px;
     box-shadow: var(--shadow-xl);
     position: relative;
+    border: 2px solid var(--gray-200);
 }
 
 .phone-frame::before {
@@ -357,10 +359,10 @@ body {
 .phone-screen {
     width: 100%;
     height: 100%;
-    background: var(--light);
+    background: var(--gray-100);
     border-radius: 25px;
     overflow: hidden;
-    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.1);
+    box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.3);
 }
 
 .app-ui {
@@ -523,13 +525,14 @@ body {
 }
 
 .tournament-item {
-    background: var(--light);
+    background: var(--gray-200);
     border-radius: var(--border-radius);
     padding: 2rem;
     box-shadow: var(--shadow-md);
     transition: var(--transition);
     position: relative;
     overflow: hidden;
+    border: 1px solid var(--gray-300);
 }
 
 .tournament-item:hover {
@@ -657,7 +660,7 @@ body {
 /* Features Section */
 .features {
     padding: 80px 0;
-    background: var(--light);
+    background: var(--dark);
 }
 
 .features-grid {
@@ -669,10 +672,11 @@ body {
 .feature-card {
     text-align: center;
     padding: 2.5rem 2rem;
-    background: var(--light);
+    background: var(--gray-200);
     border-radius: var(--border-radius);
     box-shadow: var(--shadow-md);
     transition: var(--transition);
+    border: 1px solid var(--gray-300);
 }
 
 .feature-card:hover {
@@ -764,7 +768,7 @@ body {
     align-items: center;
     gap: 1rem;
     padding: 1rem 1.5rem;
-    background: var(--light);
+    background: var(--gray-200);
     border: 2px solid var(--gray-300);
     border-radius: var(--border-radius);
     color: var(--gray-800);
@@ -831,17 +835,18 @@ body {
 .preview-phone {
     width: 250px;
     height: 500px;
-    background: linear-gradient(145deg, #f0f0f0, #e0e0e0);
+    background: linear-gradient(145deg, #2a2a2a, #1a1a1a);
     border-radius: 30px;
     padding: 12px;
     box-shadow: var(--shadow-xl);
     animation: float 6s ease-in-out infinite;
+    border: 2px solid var(--gray-200);
 }
 
 .preview-screen {
     width: 100%;
     height: 100%;
-    background: var(--light);
+    background: var(--gray-100);
     border-radius: 22px;
     overflow: hidden;
 }
@@ -968,7 +973,7 @@ body {
 
 /* Footer */
 .footer {
-    background: var(--gray-900);
+    background: var(--darker);
     color: var(--light);
     padding: 3rem 0 1rem;
 }
@@ -1012,7 +1017,7 @@ body {
 .social-links a {
     width: 40px;
     height: 40px;
-    background: var(--gray-800);
+    background: var(--gray-200);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1053,7 +1058,7 @@ body {
 }
 
 .footer-bottom {
-    border-top: 1px solid var(--gray-800);
+    border-top: 1px solid var(--gray-200);
     padding-top: 1.5rem;
     display: flex;
     justify-content: space-between;
@@ -1069,7 +1074,7 @@ body {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    background: var(--gray-800);
+    background: var(--gray-200);
     padding: 0.5rem 1rem;
     border-radius: 20px;
     font-size: 0.8rem;
