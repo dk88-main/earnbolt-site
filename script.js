@@ -188,11 +188,7 @@ document.querySelectorAll('.download-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         
-        const platform = this.classList.contains('android') ? 'Android' : 'iOS';
         const originalContent = this.innerHTML;
-        
-        // Direct download link from Google Drive
-        const apkDownloadUrl = 'https://drive.google.com/uc?export=download&id=1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk';
         
         this.innerHTML = `
             <div class="btn-icon">
@@ -206,13 +202,8 @@ document.querySelectorAll('.download-btn').forEach(btn => {
         
         this.style.pointerEvents = 'none';
         
-        // Start download
-        const link = document.createElement('a');
-        link.href = apkDownloadUrl;
-        link.download = 'GameBazzi.apk';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+        // Direct download using window.open - works better with Google Drive
+        window.open('https://drive.google.com/uc?export=download&id=1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk', '_blank');
         
         setTimeout(() => {
             this.innerHTML = `
