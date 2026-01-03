@@ -1166,12 +1166,11 @@ body {
 .screenshots {
     padding: 80px 0;
     background: var(--dark);
-    position: relative;
 }
 
-.screenshots-container {
+.screenshots-slider {
     position: relative;
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     display: flex;
     align-items: center;
@@ -1189,32 +1188,22 @@ body {
 
 .screenshot-item.active {
     display: grid;
-    animation: fadeInSlide 0.5s ease-in-out;
+    animation: slideIn 0.5s ease-in-out;
 }
 
-.screenshot-image {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: relative;
-}
-
-.screenshot-image img {
-    width: 280px;
-    height: 560px;
-    border-radius: 30px;
+.screenshot-item img {
+    width: 100%;
+    max-width: 350px;
+    height: auto;
+    border-radius: 20px;
     box-shadow: var(--shadow-xl);
     border: 3px solid var(--gray-200);
     transition: var(--transition);
 }
 
-.screenshot-image img:hover {
+.screenshot-item img:hover {
     transform: scale(1.05);
     box-shadow: 0 20px 60px rgba(255, 107, 53, 0.3);
-}
-
-.screenshot-info {
-    padding: 2rem;
 }
 
 .screenshot-info h3 {
@@ -1234,7 +1223,7 @@ body {
     line-height: 1.6;
 }
 
-.screenshot-navigation {
+.slider-controls {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1242,7 +1231,7 @@ body {
     margin-top: 3rem;
 }
 
-.nav-btn {
+.slider-btn {
     width: 50px;
     height: 50px;
     background: var(--gradient-primary);
@@ -1257,20 +1246,16 @@ body {
     justify-content: center;
 }
 
-.nav-btn:hover {
+.slider-btn:hover {
     transform: scale(1.1);
     box-shadow: var(--shadow-md);
 }
 
-.nav-btn:disabled {
-    opacity: 0.5;
-    cursor: not-allowed;
-    transform: none;
-}
-
-.screenshot-dots {
+.slider-dots {
     display: flex;
     gap: 0.5rem;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 .dot {
@@ -1291,7 +1276,7 @@ body {
     background: var(--primary);
 }
 
-@keyframes fadeInSlide {
+@keyframes slideIn {
     0% {
         opacity: 0;
         transform: translateX(30px);
@@ -1302,21 +1287,11 @@ body {
     }
 }
 
-/* Mobile Responsive for Screenshots */
 @media (max-width: 768px) {
     .screenshot-item {
         grid-template-columns: 1fr;
         gap: 2rem;
         text-align: center;
-    }
-    
-    .screenshot-image img {
-        width: 220px;
-        height: 440px;
-    }
-    
-    .screenshot-info {
-        padding: 1rem;
     }
     
     .screenshot-info h3 {
@@ -1327,11 +1302,11 @@ body {
         font-size: 1rem;
     }
     
-    .screenshot-navigation {
+    .slider-controls {
         gap: 1rem;
     }
     
-    .nav-btn {
+    .slider-btn {
         width: 40px;
         height: 40px;
         font-size: 1rem;
