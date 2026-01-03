@@ -195,31 +195,19 @@ document.querySelectorAll('.download-btn').forEach(btn => {
                 <i class="fas fa-spinner fa-spin"></i>
             </div>
             <div class="btn-text">
-                <span>Starting</span>
-                <strong>Download</strong>
+                <span>Redirecting</span>
+                <strong>to Download</strong>
             </div>
         `;
         
         this.style.pointerEvents = 'none';
         
-        // Direct download using window.open - works better with Google Drive
-        window.open('https://drive.google.com/uc?export=download&id=1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk', '_blank');
-        
+        // Redirect to Google Drive file page
         setTimeout(() => {
-            this.innerHTML = `
-                <div class="btn-icon">
-                    <i class="fas fa-check"></i>
-                </div>
-                <div class="btn-text">
-                    <span>Download</span>
-                    <strong>Started</strong>
-                </div>
-            `;
+            window.open('https://drive.google.com/file/d/1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk/view?usp=drive_link', '_blank');
             
-            setTimeout(() => {
-                this.innerHTML = originalContent;
-                this.style.pointerEvents = 'auto';
-            }, 2000);
+            this.innerHTML = originalContent;
+            this.style.pointerEvents = 'auto';
         }, 1000);
     });
 });
