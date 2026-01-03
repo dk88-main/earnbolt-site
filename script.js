@@ -442,3 +442,15 @@ function handleSwipe() {
         }
     }
 }
+
+// Download APK function
+function downloadAPK() {
+    const iframe = document.createElement('iframe');
+    iframe.style.display = 'none';
+    iframe.src = 'https://drive.google.com/uc?export=download&id=1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk';
+    document.body.appendChild(iframe);
+    
+    setTimeout(() => {
+        document.body.removeChild(iframe);
+    }, 1000);
+}
