@@ -191,17 +191,28 @@ document.querySelectorAll('.download-btn').forEach(btn => {
         const platform = this.classList.contains('android') ? 'Android' : 'iOS';
         const originalContent = this.innerHTML;
         
+        // Direct download link from Google Drive
+        const apkDownloadUrl = 'https://drive.google.com/uc?export=download&id=1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk';
+        
         this.innerHTML = `
             <div class="btn-icon">
                 <i class="fas fa-spinner fa-spin"></i>
             </div>
             <div class="btn-text">
-                <span>Preparing</span>
-                <strong>${platform} Download</strong>
+                <span>Starting</span>
+                <strong>Download</strong>
             </div>
         `;
         
         this.style.pointerEvents = 'none';
+        
+        // Start download
+        const link = document.createElement('a');
+        link.href = apkDownloadUrl;
+        link.download = 'GameBazzi.apk';
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
         
         setTimeout(() => {
             this.innerHTML = `
@@ -209,8 +220,8 @@ document.querySelectorAll('.download-btn').forEach(btn => {
                     <i class="fas fa-check"></i>
                 </div>
                 <div class="btn-text">
-                    <span>Ready to Install</span>
-                    <strong>${platform} App</strong>
+                    <span>Download</span>
+                    <strong>Started</strong>
                 </div>
             `;
             
@@ -218,7 +229,7 @@ document.querySelectorAll('.download-btn').forEach(btn => {
                 this.innerHTML = originalContent;
                 this.style.pointerEvents = 'auto';
             }, 2000);
-        }, 3000);
+        }, 1000);
     });
 });
 
