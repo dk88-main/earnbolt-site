@@ -370,3 +370,117 @@ const throttledScrollHandler = throttle(() => {
 }, 16);
 
 window.addEventListener('scroll', throttledScrollHandler);
+// Screenshots carousel functionality
+let currentSlide = 1;
+const totalSlides = 8;
+
+function showScreenshot(n) {
+    const screenshots = document.querySelectorAll('.screenshot-item');
+    const dots = document.querySelectorAll('.dot');
+    
+    if (n > totalSlides) currentSlide = 1;
+    if (n < 1) currentSlide = totalSlides;
+    
+    // Hide all screenshots
+    screenshots.forEach(screenshot => {
+        screenshot.classList.remove('active');
+    });
+    
+    // Remove active class from all dots
+    dots.forEach(dot => {
+        dot.classList.remove('active');
+    });
+    
+    // Show current screenshot
+    if (screenshots[currentSlide - 1]) {
+        screenshots[currentSlide - 1].classList.add('active');
+    }
+    
+    // Activate current dot
+    if (dots[currentSlide - 1]) {
+        dots[currentSlide - 1].classList.add('active');
+    }
+}
+
+function changeScreenshot(n) {
+    currentSlide += n;
+    showScreenshot(currentSlide);
+}
+
+function currentScreenshot(n) {
+    currentSlide = n;
+    showScreenshot(currentSlide);
+}
+
+// Auto-play screenshots
+function autoPlayScreenshots() {
+    currentSlide++;
+    showScreenshot(currentSlide);
+}
+
+// Start auto-play when screenshots section is visible
+const screenshotsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            // Start auto-play
+            const autoPlay = setInterval(autoPlayScreenshots, 4000);
+            
+            // Stop auto-play when section is not visible
+            const stopAutoPlay = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (!entry.isIntersecting) {
+                        clearInterval(autoPlay);
+                    }
+                });
+            });
+            
+            stopAutoPlay.observe(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+// Initialize screenshots carousel
+document.addEventListener('DOMContentLoaded', () => {
+    const screenshotsSection = document.querySelector('.screenshots');
+    if (screenshotsSection) {
+        screenshotsObserver.observe(screenshotsSection);
+        showScreenshot(1); // Show first screenshot initially
+    }
+});
+
+// Keyboard navigation for screenshots
+document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+        changeScreenshot(-1);
+    } else if (e.key === 'ArrowRight') {
+        changeScreenshot(1);
+    }
+});
+
+// Touch/swipe support for mobile
+let touchStartX = 0;
+let touchEndX = 0;
+
+document.addEventListener('touchstart', (e) => {
+    touchStartX = e.changedTouches[0].screenX;
+});
+
+document.addEventListener('touchend', (e) => {
+    touchEndX = e.changedTouches[0].screenX;
+    handleSwipe();
+});
+
+function handleSwipe() {
+    const swipeThreshold = 50;
+    const diff = touchStartX - touchEndX;
+    
+    if (Math.abs(diff) > swipeThreshold) {
+        if (diff > 0) {
+            // Swipe left - next screenshot
+            changeScreenshot(1);
+        } else {
+            // Swipe right - previous screenshot
+            changeScreenshot(-1);
+        }
+    }
+}
