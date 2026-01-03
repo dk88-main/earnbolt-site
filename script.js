@@ -188,6 +188,7 @@ document.querySelectorAll('.download-btn').forEach(btn => {
     btn.addEventListener('click', function(e) {
         e.preventDefault();
         
+        const platform = this.classList.contains('android') ? 'Android' : 'iOS';
         const originalContent = this.innerHTML;
         
         this.innerHTML = `
@@ -195,20 +196,29 @@ document.querySelectorAll('.download-btn').forEach(btn => {
                 <i class="fas fa-spinner fa-spin"></i>
             </div>
             <div class="btn-text">
-                <span>Redirecting</span>
-                <strong>to Download</strong>
+                <span>Preparing</span>
+                <strong>${platform} Download</strong>
             </div>
         `;
         
         this.style.pointerEvents = 'none';
         
-        // Redirect to Google Drive file page
         setTimeout(() => {
-            window.open('https://drive.google.com/file/d/1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk/view?usp=drive_link', '_blank');
+            this.innerHTML = `
+                <div class="btn-icon">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="btn-text">
+                    <span>Ready to Install</span>
+                    <strong>${platform} App</strong>
+                </div>
+            `;
             
-            this.innerHTML = originalContent;
-            this.style.pointerEvents = 'auto';
-        }, 1000);
+            setTimeout(() => {
+                this.innerHTML = originalContent;
+                this.style.pointerEvents = 'auto';
+            }, 2000);
+        }, 3000);
     });
 });
 
