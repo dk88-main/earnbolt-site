@@ -442,15 +442,3 @@ function handleSwipe() {
         }
     }
 }
-// Download APK function
-function downloadAPK() {
-    const driveUrl = 'https://drive.google.com/file/d/1iSyTWLMG2ukgYIT_s9lI1quLw_X2dpFk/view?usp=sharing';
-    const directDownloadUrl = driveUrl.replace('/view?usp=sharing', '/uc?export=download');
-    
-    const link = document.createElement('a');
-    link.href = directDownloadUrl;
-    link.download = 'GameBazzi.apk';
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-}
